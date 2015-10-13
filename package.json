@@ -4,7 +4,7 @@
   "description": "Focus showcase",
   "main": "index.js",
   "scripts": {
-    "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.npm.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/KleeGroup/focus-showcase#readme",
   "components": [
-      "components/panel"
+    "components/panel"
   ],
   "devDependencies": {
     "babel": "^5.8.21",
@@ -33,18 +33,16 @@
     "babel-loader": "^5.3.2",
     "babel-plugin-runtime": "^1.0.7",
     "babel-runtime": "^5.8.24",
-    "backbone": "^1.2.3",
     "brace": "^0.5.1",
     "css-loader": "^0.19.0",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
+    "focus-components": "0.7.2-beta1",
     "highlight.js": "^8.8.0",
-    "i18next-client": "^1.10.2",
     "jquery": "^2.1.4",
     "json-loader": "^0.5.3",
     "lodash": "^3.10.1",
-    "material-design-lite": "^1.0.5",
-    "moment": "^2.10.6",
+    "lunr": "^0.5.12",
     "node-sass": "^3.3.3",
     "raw-loader": "^0.5.1",
     "react-ace": "^2.5.0",

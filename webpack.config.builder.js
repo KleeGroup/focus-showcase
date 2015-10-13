@@ -2,7 +2,8 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const WatchIgnorePlugin = webpack.WatchIgnorePlugin;
-showcaseConfig = {
+
+showcaseConfigBuilder = FOCUS_COMPONENTS => ({
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
@@ -15,19 +16,17 @@ showcaseConfig = {
     },
     resolve: {
         alias: {
-            'focus-components': path.resolve(__dirname, '../focus-components/src')
+            'focus-components': path.resolve(__dirname, FOCUS_COMPONENTS)
         },
         fallback: [
-            path.resolve(__dirname, '../focus-components/node_modules')
+            path.resolve(FOCUS_COMPONENTS, '../node_modules')
         ]
     },
-    resolveLoader: {
-        alias: {
-            'components-examples': path.resolve(__dirname, './src/example-loader')
-        }
-    },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            FOCUS_COMPONENTS_FROM_SRC: '".' + FOCUS_COMPONENTS + '"'
+        })
     ],
     module: {
         loaders: [
@@ -36,7 +35,7 @@ showcaseConfig = {
                 loaders: ['react-hot', 'babel'],
                 include: [
                     path.resolve(__dirname, './src'),
-                    path.resolve(__dirname, '../focus-components/src')
+                    path.resolve(FOCUS_COMPONENTS)
                 ]
             },
             {
@@ -78,6 +77,6 @@ showcaseConfig = {
             }
         ]
     }
-};
+});
 
-module.exports = showcaseConfig;
+module.exports = showcaseConfigBuilder;
