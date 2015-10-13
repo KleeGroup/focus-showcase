@@ -25,7 +25,7 @@ showcaseConfigBuilder = FOCUS_COMPONENTS => ({
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            FOCUS_COMPONENTS_FROM_SRC: '".' + FOCUS_COMPONENTS + '"'
+            FOCUS_COMPONENTS_FROM_SRC: '"../' + FOCUS_COMPONENTS + '"'
         })
     ],
     module: {
