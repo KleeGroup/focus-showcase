@@ -25,7 +25,15 @@
   },
   "homepage": "https://github.com/KleeGroup/focus-showcase#readme",
   "components": [
-    "components/panel"
+    "components/input/checkbox",
+    "components/input/date",
+    "components/input/select",
+    "components/input/text",
+    "components/input/textarea",
+    "components/input/toggle",
+    "components/layout",
+    "components/panel",
+    "components/scrollspy-container"
   ],
   "devDependencies": {
     "babel": "^5.8.21",
