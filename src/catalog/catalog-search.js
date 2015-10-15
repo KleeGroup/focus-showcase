@@ -4,6 +4,12 @@ const ReactDOM = require('react-dom');
 const {Component} = React;
 const types = require('focus-core').component.types;
 const {dispatcher} = require('focus-core');
+const style = {
+    input: {
+        width: '150px'
+    }
+};
+
 /**
 * Component describing a component.
 */
@@ -54,6 +60,7 @@ class ComponentSearch extends Component{
     render(){
         const {criteria} = this.state;
         const {query} = criteria;
+        const {input} = style;
         return (
             <form action="#">
                 <div className='mdl-textfield mdl-js-textfield mdl-textfield--expandable'>
@@ -61,7 +68,7 @@ class ComponentSearch extends Component{
                         <i className='material-icons'>search</i>
                     </label>
                     <div className='mdl-textfield__expandable-holder'>
-                        <input className='mdl-textfield__input' id='search-catalog' onChange={this._handleOnChange} ref='input' type='text' value={query} autoFocus={true}/>
+                        <input className='mdl-textfield__input' id='search-catalog' onChange={this._handleOnChange} ref='input' type='text' style={input} value={query}/>
                         <label className='mdl-textfield__label' htmlFor='search-expandable'>Expandable search</label>
                     </div>
                 </div>

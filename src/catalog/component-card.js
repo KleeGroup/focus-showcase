@@ -2,7 +2,7 @@
 const React = require('react');
 const {Component} = React;
 const {types} = require('focus-core').component;
-const liStyle = { flex: 1, minWidth: '20%', marginTop: '7px', marginRight: '7px'};
+const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '7px'};
 
 /**
 * Component describing a component.
