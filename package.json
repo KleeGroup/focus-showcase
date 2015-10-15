@@ -4,9 +4,12 @@
   "description": "Focus showcase",
   "main": "index.js",
   "scripts": {
-    "build": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.npm.js",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:npm",
+    "build:local": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.local.js",
+    "build:npm": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.npm.js",
+    "start": "npm run start:local",
+    "start:local": "node index.js --local",
+    "start:npm": "node index.js --npm"
   },
   "repository": {
     "type": "git",
@@ -45,7 +48,7 @@
     "css-loader": "^0.19.0",
     "extract-text-webpack-plugin": "^0.8.2",
     "file-loader": "^0.8.4",
-    "focus-components": "0.7.2-beta1",
+    "focus-components": "0.7.2",
     "highlight.js": "^8.8.0",
     "jquery": "^2.1.4",
     "json-loader": "^0.5.3",
