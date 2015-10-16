@@ -1,0 +1,43 @@
+[data-focus='header'] {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    z-index: 2;
+    background-color: white;
+    [data-focus='back'] {
+        flex: 0 auto;
+        padding: 20px;
+        i {
+            font-size: 2em;
+            color: #555;
+        }
+    }
+
+    [data-focus='title'] {
+        flex: 1;
+        padding: 15px;
+        h2 {
+            font-size: 2.5em;
+            margin: 0;
+            margin-left: 30px;
+            margin-right: 30px;
+            color: #555;
+        }
+    }
+}
+
+[data-focus='background'] {
+    padding-top: 150px;
+    background-color: #EEE;
+    display: flex;
+    justify-content: center;
+
+    [data-focus='component'] {
+        width: 80vw;
+        background-color: white;
+        padding: 30px;
+    }
+}

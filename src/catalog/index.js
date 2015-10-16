@@ -4,6 +4,7 @@ const {reduce, sortByOrder, find} = require('lodash/collection');
 const React = require('react');
 const {Component} = React;
 import searchService from '../service/search';
+import './style/style.scss';
 
 //Components
 

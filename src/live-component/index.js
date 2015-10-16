@@ -84,11 +84,11 @@ const LiveExample = React.createClass({
     render() {
         const {codeText} = this.state;
         const {_handleCodeChange, style} = this;
-        const {component: {name, description, version, keywords}} = this.props;
+        const {component, component: {name, description, version, keywords, fullscreen}} = this.props;
         return (
             <div data-focus="showcase" style={style.showcase}>
                 <LiveEditor code={codeText} name={name} onChange={debounce(_handleCodeChange, 100)} style={style.editor} version={version} />
-                <LivePreview code={codeText} />
+                <LivePreview {...component} code={codeText}/>
             </div>
         );
     }
