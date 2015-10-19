@@ -12,7 +12,7 @@ const CodeEditor = require('react-ace');
 const LiveEditor = React.createClass({
     displayName: 'LiveEditor',
     getInitialState(){
-        return {isVisible: true};
+        return {isVisible: false};
     },
     style: {
         title: {
@@ -38,14 +38,14 @@ const LiveEditor = React.createClass({
         const {isVisible} = this.state;
         const {style} = this;
         return (
-            <div className='demo-card-wide mdl-card mdl-shadow--2dp' data-focus='showcase-live-editor' style={mainStyle}>
-                <div className='mdl-card__title' style={style.title} onClick={this._toggleVisible}>
-                    <h2 className='mdl-card__title-text'>Live editor</h2>
+            <div className='demo-card-wide mdl-card mdl-shadow--2dp' data-focus='showcase-live-editor' data-expanded={isVisible}>
+                <div className='mdl-card__title' onClick={this._toggleVisible}>
+                    <h4 className='mdl-card__title-text'>Live editor</h4>
                 </div>
                 {isVisible &&
                     <div>
-                        <CodeEditor editorProps={{$blockScrolling: 'Infinity'}} mode='jsx' name='codeEditor' onChange={onChange} theme='github' value={code} width='100%'/>
-                        <button className='mdl-button mdl-js-button mdl-button--fab mdl-button--colored' onClick={() => {window.location.reload()}} style={{position: 'fixed', right: '15px', bottom: '10px', backgroundColor: 'red', zIndex: 2}}>
+                        <CodeEditor editorProps={{$blockScrolling: 'Infinity'}} height='80vh' mode='jsx' name='codeEditor' onChange={onChange} theme='solarized light' value={code} width='100%'/>
+                        <button className='mdl-button mdl-js-button mdl-button--fab mdl-button--colored' data-focus='refresh' onClick={() => {window.location.reload()}} style={{position: 'fixed', right: '80px', bottom: '10px', zIndex: 2}}>
                             <i className='material-icons' style={{color: 'white'}}>cached</i>
                         </button>
                     </div>

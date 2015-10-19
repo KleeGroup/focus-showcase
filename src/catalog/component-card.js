@@ -3,6 +3,7 @@ const React = require('react');
 const {Component} = React;
 const {types} = require('focus-core').component;
 const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '7px'};
+import {capitalize} from 'lodash/string';
 
 /**
 * Component describing a component.
@@ -13,28 +14,32 @@ class ComponentCard extends Component{
     }
     /** @inheriteDoc */
     render() {
-        const {name, description, example, photo, keywords} = this.props;
-        const style = { background: `url('${photo}') bottom right  no-repeat rgb(33, 150, 243)`, height: '320px'};
+        const {name, description, example, capture, keywords} = this.props;
         const titleStyle = {color: 'white'};
         return (
             <li className='demo-card-wide mdl-card mdl-shadow--2dp' style={liStyle}>
-                <div className='mdl-card__title' style={style}>
-                    <h2 className='mdl-card__title-text' style={titleStyle}>{name}</h2>
+                <div data-focus='card-head'>
+                    <img data-focus='capture' src={capture}/>
+                    <div className='mdl-card__title'>
+                        <h2 className='mdl-card__title-text'>{capitalize(name)}</h2>
+                    </div>
                 </div>
                 <div className='mdl-card__supporting-text'>
-                    {description}
-                    <div className='tags'>
-                        {keywords.slice(0, 2).map((tag, idx) => <button className='mdl-button mdl-js-button mdl-js-ripple-effect' key={idx}>{tag}</button>)}
+                    <div data-focus='description'>
+                        {description}
+                    </div>
+                    <div data-focus='tags'>
+                        {keywords.map((tag, idx) => <div data-focus='tag' key={idx}>{tag.toUpperCase()}</div>)}
                     </div>
                 </div>
                 <div className='mdl-card__actions mdl-card--border'>
                     <a className='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect' href={example} onClick={this.props.showLiveComponent}>
-                        Example
+                        Show me more
                     </a>
                 </div>
                 <div className='mdl-card__menu'>
                     <button className='mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect'>
-                        <i className='material-icons' style={titleStyle}>share</i>
+                        <a href={`mailto:?subject=Check the ${name} out !&body=${window.location.host}/#component/${name}`}><i className='material-icons'>share</i></a>
                     </button>
                 </div>
             </li>

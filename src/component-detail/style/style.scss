@@ -1,5 +1,6 @@
 $detail-padding: 50px;
 $header-height: 80px;
+@import '../../style/colors.scss';
 
 [data-focus='component-detail'] {
     padding: $detail-padding;
@@ -24,7 +25,7 @@ $header-height: 80px;
             padding: 20px;
             i {
                 font-size: 2em;
-                color: #555;
+                color: $primary_text;
             }
         }
 
@@ -32,25 +33,76 @@ $header-height: 80px;
             flex: 1;
             padding: 15px;
             h2 {
-                font-size: 2.5em;
+                font-size: 2em;
                 margin: 0;
                 margin-left: 30px;
                 margin-right: 30px;
-                color: #555;
+                color: $primary_text;
             }
-        }
-
-        [data-focus='demo-button'] {
-            flex: 0 150px;
-            padding: 20px;
         }
     }
 
     .section--center {
         margin-bottom: 20px;
 
-        [data-focus='description'] {
-            font-size: 1.3em;
+        &[data-focus='capture'] {
+            flex: 0 300px;
+            margin-right: 20px;
+            width: 300px;
+            height: 300px;
+            img {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        &[data-focus='meta'] {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-flow: column;
+            [data-focus='tags'] {
+                margin-bottom: 10px;
+                span {
+                    color: $secondary_text;
+                }
+            }
+
+            [data-focus='description'] {
+                font-size: 1.2em;
+                color: $primary_text
+            }
+
+        }
+    }
+
+    [data-focus='demo-button'] {
+        position: fixed;
+        padding: 20px;
+        bottom: 10px;
+        right: 10px;
+        z-index: 1;
+        button {
+            background-color: $primary;
+
+            &:hover {
+                background-color: $dark_primary;
+            }
+        }
+    }
+
+    [data-focus='sample-code'] {
+        h4 {
+            text-align: right;
+            margin-right: 40px;
+            color: $accent;
+            z-index: 1;
+        }
+        .hljs {
+            margin-top: -72px;
+            margin-bottom: 0;
+            background-color: $text;
         }
     }
 }

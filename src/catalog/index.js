@@ -31,7 +31,9 @@ class ComponentCatalog extends Component{
         const props = {...this.props, showLiveComponent: this._showLiveComponent.bind(this)};
         return (
             <div data-focus='catalog'>
-                <CatalogSearch store={store} query={query}/>
+                <div className='mdl-shadow--2dp' data-focus='detail-header'>
+                    <CatalogSearch store={store} query={query}/>
+                </div>
                 <ListPage {...props}/>
             </div>
         );
