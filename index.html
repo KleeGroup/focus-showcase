@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="src/assets/favicon.png" />
     <!--  SCRIPT LOADING-->
+    <script>
+    if (navigator.userAgent.match(/.*Trident.*/)) {
+        document.addEventListener('DOMContentLoaded', function() {
+            window.document.body.innerHTML = '<div style="width: 100vw; text-align: center; margin-top: 200px; font-size: 20px"><p>Internet Explorer support is coming soon...</p><p><img src="http://fr.eonline.com/eol_images/Entire_Site/2015218/rs_500x183-150318131712-Funny-GIF-Internet-Explorer.gif"/></p><p>See you on <a href="https://www.google.fr/chrome/browser/desktop/">Google Chrome !</a></p></div>';
+        });
+    }
+    </script>
+
     <script src="./dist/focus-showcase.js"></script>
 </head>
 <body>
