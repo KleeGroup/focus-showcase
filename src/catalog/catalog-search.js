@@ -35,8 +35,17 @@ class ComponentSearch extends Component{
     }
     _onStoreChange(){
         const storeValue = this.getStateFromStore();
+        const {criteria: {query}} = storeValue;
         this.setState(storeValue, ()=>{
-            // Backbone.history.navigate(`#query/${storeValue.criteria.query}`);
+            if (!query || query === '') {
+                Backbone.history.navigate(``);
+            } else {
+                Backbone.history.navigate(`#query/${query}`);
+            }
+        }, () => {
+            if (this.refs['search-input']) {
+                componentHandler.upgradeElement(this.refs['search-input']);
+            }
         });
     }
     componentWillMount(){

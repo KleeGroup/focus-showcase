@@ -10,6 +10,7 @@ import componentsStore from './store/components';
 import getComponentFromName  from './service/get-component-from-name';
 import Detail from './component-detail';
 import tags from './service/get-tags';
+import {dispatcher} from 'focus-core';
 const links = tags.map(tag => ({url: `#query/${tag}`, content: tag}));
 const ShowCaseRouter =  Backbone.Router.extend({
     routes: {
@@ -45,7 +46,11 @@ const ShowCaseRouter =  Backbone.Router.extend({
             );
     },
     query(query){
-        console.log('query route', query);
+        dispatcher.handleViewAction({
+            data: {criteria: {query}},
+            type: 'update',
+            identifier: componentsStore.identifier
+        });
         return ReactDOM.render(
             <Layout title={`query ${query}`} links={links}><Catalog store={componentsStore} query={query}/></Layout>,
             document.querySelector('#showcase')

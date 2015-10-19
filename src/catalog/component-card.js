@@ -2,7 +2,7 @@
 const React = require('react');
 const {Component} = React;
 const {types} = require('focus-core').component;
-const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '7px'};
+const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px'};
 import {capitalize} from 'lodash/string';
 
 /**
@@ -21,8 +21,8 @@ class ComponentCard extends Component{
                 <div data-focus='card-head'>
                     <img data-focus='capture' src={capture}/>
                     <div className='mdl-card__title'>
-                        <h2 className='mdl-card__title-text'>{capitalize(name)}</h2>
                     </div>
+                    <h2 className='mdl-card__title-text'>{capitalize(name)}</h2>
                 </div>
                 <div className='mdl-card__supporting-text'>
                     <div data-focus='description'>
