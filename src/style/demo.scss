@@ -13,9 +13,11 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+@import './colors.scss';
 
 html, body {
     font-family: 'Roboto', 'Helvetica', sans-serif;
+    background-color: lighten($divider, 25);
 }
 
 .demo-avatar {
