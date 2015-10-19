@@ -41,3 +41,33 @@
         padding: 30px;
     }
 }
+
+[data-focus='showcase-live-editor'] {
+    width: 50%;
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    z-index: 10000;
+    min-height: 0;
+    background-color: #37474F;
+    h2 {
+        color: white;
+        margin-bottom: -10px;
+    }
+
+    &[data-expanded='false'] {
+        width: 20%;
+    }
+
+    #codeEditor {
+        height: 80vh;
+    }
+
+    .mdl-card__title {
+        height: 40px;
+    }
+
+    .mdl-card__menu {
+        top: 4px;
+    }
+}
