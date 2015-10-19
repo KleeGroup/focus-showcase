@@ -42,7 +42,11 @@ class ComponentSearch extends Component{
             } else {
                 Backbone.history.navigate(`#query/${query}`);
             }
-        }, componentHandler.upgradeElement(this.refs['search-input']));
+        }, () => {
+            if (this.refs['search-input']) {
+                componentHandler.upgradeElement(this.refs['search-input']);
+            }
+        });
     }
     componentWillMount(){
         const {store} = this.props;
