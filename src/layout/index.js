@@ -45,7 +45,7 @@ const Layout = React.createClass({
                     <div className='tags-list'>
                         <h3>Tags</h3>
                         {links.map((link, idx)=>{
-                            return <a className='mdl-navigation__link' key={idx} href={link.url || '/'}><i className='mdl-color-text--blue-grey-400 fa fa-cube' role='presentation'></i>{link.content}</a>
+                            return <a className='mdl-navigation__link' key={idx} href={link.url || '/'}><i className='mdl-color-text--blue-grey-400 fa fa-puzzle-piece' role='presentation'></i>{link.content}</a>
                         })}
                     </div>
                     <div className='brand-powered'><a href="http://www.kleegroup.com">Propulsé par</a></div>

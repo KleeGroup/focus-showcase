@@ -1,3 +1,58 @@
 [data-focus='catalog'] {
     padding: 50px;
+    padding-top: 80px;
+    [data-focus='detail-header'] {
+        @media (max-width: 1024px) {
+            width: 100vw;
+        }
+        @media (min-width: 1024px) {
+            width: calc(100vw - 260px);
+        }
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 40px;
+        display: flex;
+        z-index: 2;
+        background-color: white;
+        padding-top: 13px;
+        form {
+            margin-left: 10px;
+        }
+    }
+
+    [data-focus='capture'] {
+        width: 300px;
+        height: 300px;
+        -webkit-filter: grayscale(0.9);
+        filter: grayscale(0.9);
+    }
+
+    [data-focus='tags'] {
+        display: flex;
+        flex-wrap: wrap;
+        height: 50px;
+        [data-focus='tag'] {
+            margin-right: 5px;
+        }
+    }
+
+    [data-focus='card-head'] {
+        height: 300px;
+        .mdl-card__title {
+            opacity: 0.99;
+            height: 300px;
+            margin-top: -300px;
+            background-color: rgba(144,164,174,0.15);
+            h2 {
+                color: #5C6BC0;
+            }
+        }
+    }
+
+    .mdl-card__menu {
+        i {
+            color: #5C6BC0;
+        }
+    }
 }
