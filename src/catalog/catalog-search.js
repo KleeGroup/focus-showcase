@@ -4,6 +4,7 @@ const ReactDOM = require('react-dom');
 const {Component} = React;
 const types = require('focus-core').component.types;
 const {dispatcher} = require('focus-core');
+const mdlBehaviour = require('focus-components').behaviours.material;
 const style = {
     input: {
         width: '150px'
@@ -13,6 +14,7 @@ const style = {
 /**
 * Component describing a component.
 */
+@mdlBehaviour('search-input')
 class ComponentSearch extends Component{
     constructor(props){
         super(props);
@@ -20,7 +22,6 @@ class ComponentSearch extends Component{
         this.getStateFromStore = this.getStateFromStore.bind(this);
         this._handleOnChange = this._handleOnChange.bind(this);
         this._onStoreChange = this._onStoreChange.bind(this);
-        console.log('COMPONENT SEARCH', props);
         this.state = {criteria: {query: props.query}};
         dispatcher.handleViewAction({
             data: {criteria: {query: props.query}},
@@ -35,7 +36,7 @@ class ComponentSearch extends Component{
     _onStoreChange(){
         const storeValue = this.getStateFromStore();
         this.setState(storeValue, ()=>{
-            Backbone.history.navigate(`#query/${storeValue.criteria.query}`);
+            // Backbone.history.navigate(`#query/${storeValue.criteria.query}`);
         });
     }
     componentWillMount(){
@@ -62,17 +63,15 @@ class ComponentSearch extends Component{
         const {query} = criteria;
         const {input} = style;
         return (
-            <form action="#">
-                <div className='mdl-textfield mdl-js-textfield mdl-textfield--expandable'>
-                    <label className='mdl-button mdl-js-button mdl-button--icon' htmlFor='search-catalog'>
-                        <i className='material-icons'>search</i>
-                    </label>
-                    <div className='mdl-textfield__expandable-holder'>
-                        <input className='mdl-textfield__input' id='search-catalog' onChange={this._handleOnChange} ref='input' type='text' style={input} value={query}/>
-                        <label className='mdl-textfield__label' htmlFor='search-expandable'>Expandable search</label>
+            <div data-focus='component-search'>
+                <i className='material-icons'>search</i>
+                <form onSubmit={e => {e.preventDefault();}}>
+                    <div className="mdl-textfield mdl-js-textfield" ref='search-input'>
+                        <input className="mdl-textfield__input" type="text" id='search-catalog' onChange={this._handleOnChange} ref='input' value={query}/>
+                        <label className="mdl-textfield__label" htmlFor='search-catalog'>Component search</label>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         );
     }
 }

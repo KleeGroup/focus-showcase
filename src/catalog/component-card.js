@@ -25,7 +25,9 @@ class ComponentCard extends Component{
                     </div>
                 </div>
                 <div className='mdl-card__supporting-text'>
-                    {description}
+                    <div data-focus='description'>
+                        {description}
+                    </div>
                     <div data-focus='tags'>
                         {keywords.map((tag, idx) => <div data-focus='tag' key={idx}>{tag.toUpperCase()}</div>)}
                     </div>
@@ -37,7 +39,7 @@ class ComponentCard extends Component{
                 </div>
                 <div className='mdl-card__menu'>
                     <button className='mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect'>
-                        <a href={`mailto:?subject=Check the ${name} out !`}><i className='material-icons'>share</i></a>
+                        <a href={`mailto:?subject=Check the ${name} out !&body=${window.location.host}/#component/${name}`}><i className='material-icons'>share</i></a>
                     </button>
                 </div>
             </li>

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import hjs from 'highlight.js';
 import './style/style.scss';
 import 'highlight.js/styles/atelier-cave.light.css';
+import H_js from './highlight-js';
 const types = require('focus-core').component.types;
 import capitalize from 'lodash/string/capitalize';
 
@@ -15,6 +16,7 @@ class ComponentDetail extends Component{
         super(props);
     }
     componentDidMount(){
+        hjs.registerLanguage('js', H_js);
         hjs.highlightBlock(ReactDOM.findDOMNode(this.refs.code));
     }
     /** @inheriteDoc */
@@ -39,7 +41,7 @@ class ComponentDetail extends Component{
                     </section>
                     <section className="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" data-focus='meta'>
                         <div data-focus='tags'>
-                            {keywords.slice(0, 2).map((tag) => <span style={{margin: '10px'}}>{tag.toUpperCase()}</span>)}
+                            {keywords.map((tag, idx) => <span key={idx} style={{margin: '10px'}}>{tag.toUpperCase()}</span>)}
                         </div>
                         <div data-focus='description'>{description}</div>
                     </section>
@@ -47,8 +49,8 @@ class ComponentDetail extends Component{
                 <section className="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                     <div className="mdl-card mdl-cell mdl-cell--12-col" data-focus='sample-code'>
                         <h4>Sample code</h4>
-                        <pre ref='code'>
-                            <code className='javascript'>{code}</code>
+                        <pre className='js' ref='code'>
+                            <code>{code}</code>
                         </pre>
                     </div>
                 </section>
@@ -69,7 +71,7 @@ ComponentDetail.propTypes = {
     description: types('string'),
     example: types('string'),
     url: types('string'),
-    keywords: types('string'),
+    keywords: types('array'),
     photo: types('string'),
     name: types('string')
 };
