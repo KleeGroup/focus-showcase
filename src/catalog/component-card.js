@@ -2,7 +2,7 @@
 const React = require('react');
 const {Component} = React;
 const {types} = require('focus-core').component;
-const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px'};
+const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px', marginBottom: '20px'};
 import {capitalize} from 'lodash/string';
 
 /**
