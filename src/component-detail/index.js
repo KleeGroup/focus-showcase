@@ -55,7 +55,7 @@ class ComponentDetail extends Component{
                     </div>
                 </section>
                 <div data-focus='demo-button'>
-                    <button className='mdl-button mdl-js-button mdl-button--raised mdl-button--colored' onClick={()=>{Backbone.history.navigate(`component/${name}/detail`, true)}}>
+                    <button className='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' onClick={()=>{Backbone.history.navigate(`component/${name}/detail`, true)}}>
                         Live preview <i className="material-icons">code</i>
                 </button>
             </div>

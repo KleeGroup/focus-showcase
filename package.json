@@ -31,7 +31,12 @@
     "components/panel",
     "components/layout",
     "common/form",
-    "components/scrollspy-container"
+    "components/input/checkbox",
+    "components/input/date",
+    "components/input/select",
+    "components/input/text",
+    "components/input/textarea",
+    "components/input/toggle"
   ],
   "devDependencies": {
     "babel": "^5.8.21",

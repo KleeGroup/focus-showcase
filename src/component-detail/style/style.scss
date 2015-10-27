@@ -85,9 +85,12 @@ $header-height: 80px;
         z-index: 1;
         button {
             background-color: $primary;
-
+            font-size: 1.3em;
             &:hover {
                 background-color: $dark_primary;
+            }
+            .material-icons {
+                font-size: 1.3em;
             }
         }
     }
