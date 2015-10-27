@@ -2,16 +2,21 @@
 const React = require('react');
 const {Component} = React;
 const {types} = require('focus-core').component;
-const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px'};
+const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px', marginBottom: '20px'};
 import {capitalize} from 'lodash/string';
 
 /**
 * Component describing a component.
 */
 class ComponentCard extends Component{
-    constructor(props){
+    constructor(props) {
         super(props);
     }
+
+    _showLiveExample = () => {
+        Backbone.history.navigate(`component/${this.props.name}/detail`, true);
+    }
+
     /** @inheriteDoc */
     render() {
         const {name, description, example, capture, keywords} = this.props;
@@ -24,7 +29,7 @@ class ComponentCard extends Component{
                     </div>
                     <h2 className='mdl-card__title-text'>{capitalize(name)}</h2>
                 </div>
-                <div className='mdl-card__supporting-text'>
+                <div className='mdl-card__supporting-text' data-focus='card-content'>
                     <div data-focus='description'>
                         {description}
                     </div>
@@ -34,7 +39,10 @@ class ComponentCard extends Component{
                 </div>
                 <div className='mdl-card__actions mdl-card--border'>
                     <a className='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect' href={example} onClick={this.props.showLiveComponent}>
-                        Show me more
+                        Code sample
+                    </a>
+                    <a className='mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect' href={example} onClick={this._showLiveExample}>
+                        Live component
                     </a>
                 </div>
                 <div className='mdl-card__menu'>

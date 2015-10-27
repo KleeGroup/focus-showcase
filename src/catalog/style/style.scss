@@ -35,20 +35,28 @@
         filter: grayscale(0.7);
     }
 
-    [data-focus='description'] {
-        margin-bottom: 10px;
-        color: $primary_text;
-    }
-
-    [data-focus='tags'] {
+    [data-focus='card-content'] {
+        height: 120px;
         display: flex;
-        flex-wrap: wrap;
-        max-height: 50px;
-        [data-focus='tag'] {
-            margin-right: 7px;
-            color: $secondary_text;
+        flex-flow: column;
+
+        [data-focus='description'] {
+            margin-bottom: 10px;
+            color: $primary_text;
+            flex: 1;
+        }
+
+        [data-focus='tags'] {
+            display: flex;
+            flex-wrap: wrap;
+            max-height: 50px;
+            [data-focus='tag'] {
+                margin-right: 7px;
+                color: $secondary_text;
+            }
         }
     }
+
 
     [data-focus='card-head'] {
         height: 300px;
