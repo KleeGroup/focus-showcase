@@ -31,6 +31,7 @@
     "components/panel",
     "components/layout",
     "common/form",
+    "components/scrollspy-container",
     "components/input/checkbox",
     "components/input/date",
     "components/input/select",
