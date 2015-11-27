@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const WatchIgnorePlugin = webpack.WatchIgnorePlugin;
 
-showcaseConfigBuilder = FOCUS_COMPONENTS => ({
+showcaseConfigBuilder =  FOCUS_COMPONENTS => ({
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
@@ -16,10 +16,12 @@ showcaseConfigBuilder = FOCUS_COMPONENTS => ({
     },
     resolve: {
         alias: {
-            'focus-components': path.resolve(__dirname, FOCUS_COMPONENTS)
+            'focus-components': path.resolve(__dirname, FOCUS_COMPONENTS),
+            'focus-core': path.resolve(__dirname, '../focus-core/src')
         },
         fallback: [
-            path.resolve(FOCUS_COMPONENTS, '../node_modules')
+            path.resolve(FOCUS_COMPONENTS, '../node_modules'),
+//            path.resolve(__dirname, '../focus-core/node_modules')
         ]
     },
     plugins: [
@@ -35,7 +37,8 @@ showcaseConfigBuilder = FOCUS_COMPONENTS => ({
                 loaders: ['react-hot', 'babel'],
                 include: [
                     path.resolve(__dirname, './src'),
-                    path.resolve(FOCUS_COMPONENTS)
+                    path.resolve(FOCUS_COMPONENTS),
+                    path.resolve(__dirname, '../focus-core/src')
                 ]
             },
             {
