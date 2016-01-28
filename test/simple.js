@@ -29,10 +29,10 @@ describe("testing javascript in the browser", function() {
   });
 
   it("should handle clicking on a headline", function(done) {
-    var headline = this.browser.findElement(webdriver.By.css('h1'));
+    var headline = this.browser.findElement(webdriver.By.css('h2'));
     headline.click();
     headline.getText().then(function(txt) {
-      assert.equal(txt, "awesome");
+      assert.equal(txt, "Showcase");
       done();
     });
   });
