@@ -1,6 +1,7 @@
 var assert = require("assert");
 var webdriver = require("selenium-webdriver");
 
+
 describe("testing javascript in the browser", function() {
   beforeEach(function() {
     if (process.env.SAUCE_USERNAME != undefined) {
