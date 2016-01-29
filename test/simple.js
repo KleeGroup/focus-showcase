@@ -21,7 +21,7 @@ describe("testing javascript in the browser", function() {
       }).build();
     }
 
-    return this.browser.get("http://localhost:3000");
+    return this.browser.get("http://getfocus.io");
   });
 
   afterEach(function() {
@@ -29,10 +29,10 @@ describe("testing javascript in the browser", function() {
   });
 
   it("should handle clicking on a headline", function(done) {
-    var headline = this.browser.findElement(webdriver.By.css('h2'));
+    var headline = this.browser.findElement(webdriver.By.css('h3'));
     headline.click();
     headline.getText().then(function(txt) {
-      assert.equal(txt, "Showcase");
+      assert.equal(txt, "Les librairies FOCUS");
       done();
     });
   });
