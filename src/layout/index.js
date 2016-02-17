@@ -1,11 +1,11 @@
 // Dependencies
 
-const {types} = require('focus-core').component;
-const React = require('react');
+import types from 'focus-core/component/types';
+import React from 'react';
 
 // Mixins
 
-const i18nBehaviour = require('focus-components').common.i18n.mixin;
+import i18nBehaviour from 'focus-components/common/i18n/mixin';
 
 const Layout = React.createClass({
     displayName: 'ShowcaseLayout',

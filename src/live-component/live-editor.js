@@ -1,6 +1,6 @@
 // Dependencies
-const React = require('react');
-const {types} = require('focus-core').component;
+import React from 'react';
+import types from 'focus-core/component/types';
 require('brace');
 require('brace/mode/jsx');
 require('brace/theme/github');

@@ -2,7 +2,7 @@
 
 // Dependencies
 import {PropTypes, Component} from 'react';
-import babel from 'babel-core/browser';
+import history from 'focus-core/history';
 import capitalize from 'lodash/string/capitalize';
 import './style/style.scss';
 
@@ -14,6 +14,10 @@ const propTypes = {
 }
 
 class LivePreview extends Component {
+    componentWillMount() {
+        
+    }
+
     _renderFullScreen(content) {
         return (
             <div data-focus='showcase-live-preview' data-screen='full'>
@@ -28,7 +32,7 @@ class LivePreview extends Component {
             <div data-focus='showcase-live-preview' data-screen='tiled'>
                 <div className='mdl-shadow--2dp' data-focus='header'>
                     <div data-focus='back'>
-                        <button className='mdl-button mdl-js-button' onClick={()=>{Backbone.history.navigate(`component/${name}`, true);}}>
+                        <button className='mdl-button mdl-js-button' onClick={()=>{history.navigate(`component/${name}`, true);}}>
                             <i className="material-icons">navigate_before</i>
                             <i className="material-icons">extension</i>
                         </button>
@@ -52,12 +56,21 @@ class LivePreview extends Component {
         let content;
         try {
             /* eslint-disable */
-            content = eval(babel.transform(`
+            content = eval(Babel.transform(`
                 (function(module){
                     ${code}
                     return <module.exports/>;
                 })({});
-                `, {stage: 0}
+                `, {
+                    presets: [
+                        "stage-0",
+                        "react",
+                        "es2015"
+                    ],
+                    plugins: [
+                        "transform-class-properties"
+                    ]
+                }
             ).code);
             /* eslint-enable */
         } catch (e) {

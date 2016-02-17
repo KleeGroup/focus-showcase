@@ -1,17 +1,18 @@
 // Dependencies
 
 const {reduce, sortByOrder, find} = require('lodash/collection');
-const React = require('react');
+import React from 'react';
+import history from 'focus-core/history';
 const {Component} = React;
 import searchService from '../service/search';
 import './style/style.scss';
 
 //Components
 
-const {component: ListPage} = require('focus-components').page.list;
+import {component as ListPage} from 'focus-components/page/list';
 const CatalogSearch = require('./catalog-search');
 const CatalogList = require('./catalog-list');
-const {component: Popin} = require('focus-components').application.popin;
+import {component as Popin} from 'focus-components/application/popin';
 
 /**
 * Component describing a component.
@@ -22,7 +23,7 @@ class ComponentCatalog extends Component{
     }
 
     _showLiveComponent(component = {}) {
-        Backbone.history.navigate(`component/${component.name}`, true);
+        history.navigate(`component/${component.name}`, true);
     }
 
     /** @inheriteDoc */
