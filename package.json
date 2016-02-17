@@ -88,7 +88,8 @@
     "components/input/select",
     "components/input/text",
     "components/input/textarea",
-    "components/input/toggle"
+    "components/input/toggle",
+    "components/input/autocomplete-select"
   ],
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
@@ -122,6 +123,7 @@
     "moment": "^2.11.2",
     "node-sass": "^3.3.3",
     "numeral": "^1.5.3",
+    "opener": "^1.4.1",
     "raw-loader": "^0.5.1",
     "react": "^0.14.7",
     "react-ace": "^2.5.0",
