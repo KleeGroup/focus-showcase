@@ -7,7 +7,8 @@
     "build": "better-npm-run bundle",
     "start": "npm run start:npm",
     "start:local": "better-npm-run webpack-dev-server-local-focus",
-    "start:npm": "better-npm-run webpack-dev-server-npm-focus"
+    "start:npm": "better-npm-run webpack-dev-server-npm-focus",
+    "test": "exit 0"
   },
   "babel": {
     "presets": [
