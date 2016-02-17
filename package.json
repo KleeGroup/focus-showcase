@@ -4,6 +4,7 @@
   "description": "Focus showcase",
   "main": "index.js",
   "scripts": {
+    "build": "better-npm-run bundle",
     "start": "npm run start:npm",
     "start:local": "better-npm-run webpack-dev-server-local-focus",
     "start:npm": "better-npm-run webpack-dev-server-npm-focus"
@@ -21,6 +22,20 @@
     ]
   },
   "betterScripts": {
+    "bundle": {
+      "command": "webpack --progress",
+      "env": {
+        "ANCHOR_CLASS": "focus-showcase",
+        "BABELIFIED_PATH": "./src",
+        "ENTRY_FILE_PATH": "./src/app",
+        "PAGE_TITLE": "Focus showcase",
+        "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
+        "OUTPUT_DIR": ".",
+        "NODE_ENV": "production",
+        "MINIMIFY": false
+      }
+    },
     "webpack-dev-server-local-focus": {
       "command": "node ./dev-server.js",
       "env": {
