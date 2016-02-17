@@ -1,10 +1,10 @@
 //dependencies
-const React = require('react');
-const ReactDOM = require('react-dom');
-const {Component} = React;
-const types = require('focus-core').component.types;
-const {dispatcher} = require('focus-core');
-const mdlBehaviour = require('focus-components').behaviours.material;
+import React, {Component} from 'react';
+import history from 'focus-core/history';
+import ReactDOM from 'react-dom';
+import types from 'focus-core/component/types';
+import {dispatcher} from 'focus-core';
+import mdlBehaviour from 'focus-components/behaviours/material';
 const style = {
     input: {
         width: '150px'
@@ -38,9 +38,9 @@ class ComponentSearch extends Component{
         const {criteria: {query}} = storeValue;
         this.setState(storeValue, ()=>{
             if (!query || query === '') {
-                Backbone.history.navigate(``);
+                history.navigate(``);
             } else {
-                Backbone.history.navigate(`#query/${query}`);
+                history.navigate(`#query/${query}`);
             }
         }, () => {
             if (this.refs['search-input']) {

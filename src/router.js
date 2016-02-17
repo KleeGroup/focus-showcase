@@ -1,8 +1,6 @@
-import jQuery from 'jquery';
-import _ from 'lodash';
-import Backbone from 'backbone';
-import React from 'react';
+import router from 'focus-core/router';
 import ReactDOM from 'react-dom';
+import React from 'react';
 import Catalog from './catalog';
 import Layout from './layout';
 import Sandbox from './live-component';
@@ -11,8 +9,10 @@ import getComponentFromName  from './service/get-component-from-name';
 import Detail from './component-detail';
 import tags from './service/get-tags';
 import {dispatcher} from 'focus-core';
+
 const links = tags.map(tag => ({url: `#query/${tag}`, content: tag}));
-const ShowCaseRouter =  Backbone.Router.extend({
+
+const ShowCaseRouter = router.extend({
     routes: {
         '': 'showcase',
         'component/:name': 'component',
@@ -26,7 +26,7 @@ const ShowCaseRouter =  Backbone.Router.extend({
         // render the showcase into the document
         return ReactDOM.render(
             <Layout title='Component catalog' links={links}><Catalog store={componentsStore} query=''/></Layout>,
-            document.querySelector('#showcase')
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
         );
     },
     component(name){
@@ -34,7 +34,7 @@ const ShowCaseRouter =  Backbone.Router.extend({
         const component = getComponentFromName(name);
         return ReactDOM.render(
             <Layout title={`component ${name}`} links={links} ><Detail {...component} /></Layout>,
-            document.querySelector('#showcase')
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
         );
     },
     componentDetail(name){
@@ -42,7 +42,7 @@ const ShowCaseRouter =  Backbone.Router.extend({
             const component = getComponentFromName(name);
             return ReactDOM.render(
                 <Sandbox component={component} />,
-                document.querySelector('#showcase')
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
             );
     },
     query(query){
@@ -53,7 +53,7 @@ const ShowCaseRouter =  Backbone.Router.extend({
         });
         return ReactDOM.render(
             <Layout title={`query ${query}`} links={links}><Catalog store={componentsStore} query={query}/></Layout>,
-            document.querySelector('#showcase')
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
         );
     }
 });

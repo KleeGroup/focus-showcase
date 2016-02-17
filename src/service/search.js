@@ -9,5 +9,5 @@ export default function searchService(options){
 
             failure(e);
         }
-    }).then((dataList) => {return {dataList, totalCount: dataList.length}; });
+    }).then(dataList => ({dataList, totalCount: dataList.length}));
 }

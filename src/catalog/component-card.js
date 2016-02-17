@@ -1,7 +1,8 @@
 //dependencies
-const React = require('react');
+import React from 'react';
+import history from 'focus-core/history';
 const {Component} = React;
-const {types} = require('focus-core').component;
+import types from 'focus-core/component/types';
 const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px', marginBottom: '20px'};
 import {capitalize} from 'lodash/string';
 
@@ -14,7 +15,7 @@ class ComponentCard extends Component{
     }
 
     _showLiveExample = () => {
-        Backbone.history.navigate(`component/${this.props.name}/detail`, true);
+        history.navigate(`component/${this.props.name}/detail`, true);
     }
 
     /** @inheriteDoc */

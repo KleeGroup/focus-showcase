@@ -4,12 +4,62 @@
   "description": "Focus showcase",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:npm",
-    "build:local": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.local.js",
-    "build:npm": "node ./node_modules/webpack/bin/webpack.js --config webpack.config.npm.js",
-    "start": "npm run start:local",
-    "start:local": "node index.js --local",
-    "start:npm": "node index.js --npm"
+    "build": "better-npm-run bundle",
+    "start": "npm run start:npm",
+    "start:local": "better-npm-run webpack-dev-server-local-focus",
+    "start:npm": "better-npm-run webpack-dev-server-npm-focus"
+  },
+  "babel": {
+    "presets": [
+      "stage-0",
+      "react",
+      "es2015"
+    ],
+    "plugins": [
+      "transform-class-properties",
+      "transform-decorators-legacy",
+      "add-module-exports"
+    ]
+  },
+  "betterScripts": {
+    "bundle": {
+      "command": "webpack --progress",
+      "env": {
+        "ANCHOR_CLASS": "focus-showcase",
+        "BABELIFIED_PATH": "./src",
+        "ENTRY_FILE_PATH": "./src/app",
+        "PAGE_TITLE": "Focus showcase",
+        "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
+        "OUTPUT_DIR": ".",
+        "NODE_ENV": "production",
+        "MINIMIFY": false
+      }
+    },
+    "webpack-dev-server-local-focus": {
+      "command": "node ./dev-server.js",
+      "env": {
+        "ANCHOR_CLASS": "focus-showcase",
+        "BABELIFIED_PATH": "./src",
+        "ENTRY_FILE_PATH": "./src/app",
+        "PAGE_TITLE": "Focus showcase",
+        "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
+        "OUTPUT_DIR": "."
+      }
+    },
+    "webpack-dev-server-npm-focus": {
+      "command": "node ./dev-server.js",
+      "env": {
+        "ANCHOR_CLASS": "focus-showcase",
+        "BABELIFIED_PATH": "./src",
+        "ENTRY_FILE_PATH": "./src/app",
+        "PAGE_TITLE": "Focus showcase",
+        "LOCAL_FOCUS": false,
+        "GENERATE_HTML": false,
+        "OUTPUT_DIR": "."
+      }
+    }
   },
   "repository": {
     "type": "git",
@@ -40,11 +90,22 @@
     "components/input/toggle"
   ],
   "devDependencies": {
-    "babel": "^5.8.21",
-    "babel-core": "^5.8.22",
-    "babel-loader": "^5.3.2",
-    "babel-plugin-runtime": "^1.0.7",
-    "babel-runtime": "^5.8.24",
+    "autoprefixer-loader": "^3.2.0",
+    "babel": "^6.3.26",
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-loader": "^6.2.1",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-transform-class-properties": "^6.4.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-runtime": "^6.5.0",
+    "babel-standalone": "^6.4.4",
+    "better-npm-run": "0.0.5",
     "brace": "^0.5.1",
     "css-loader": "^0.19.0",
     "extract-text-webpack-plugin": "^0.8.2",
@@ -55,14 +116,21 @@
     "json-loader": "^0.5.3",
     "lodash": "^3.10.1",
     "lunr": "^0.5.12",
+    "material-design-icons-iconfont": "^2.0.4",
+    "moment": "^2.11.2",
     "node-sass": "^3.3.3",
+    "numeral": "^1.5.3",
     "raw-loader": "^0.5.1",
+    "react": "^0.14.7",
     "react-ace": "^2.5.0",
+    "react-dom": "^0.14.7",
     "react-hot-loader": "^1.3.0",
     "sass-loader": "^3.0.0",
+    "source-map-loader": "^0.1.5",
     "style-loader": "^0.12.4",
     "url-loader": "^0.5.6",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.11.0"
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-focus": "^0.10.1"
   }
 }

@@ -1,5 +1,5 @@
 //dependencies
-const React = require('react');
+import React from 'react';
 const {Component} = React;
 //Other component
 const ComponentCard = require('./component-card');
