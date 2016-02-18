@@ -89,7 +89,8 @@
     "components/input/text",
     "components/input/textarea",
     "components/input/toggle",
-    "components/input/autocomplete-select"
+    "components/input/autocomplete-select",
+    "components/menu"
   ],
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
