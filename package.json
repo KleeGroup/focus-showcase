@@ -93,7 +93,8 @@
     "components/menu",
     "application/popin",
     "components/confirm",
-    "search/search-bar"
+    "search/search-bar",
+    "search/facet-box"
   ],
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
