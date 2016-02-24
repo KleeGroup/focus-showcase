@@ -3,10 +3,10 @@
 var assert = require("assert");
 var webdriver = require("selenium-webdriver");
 var URL = 'http://getfocus.io';
-function createBrowser(browserName, url){
+function createBrowser(browserName, url, context){
   return function createdBrowser(){
     if (process.env.SAUCE_USERNAME != undefined) {
-      this.browser = new webdriver.Builder()
+      context.browser = new webdriver.Builder()
       .usingServer('http://'+ process.env.SAUCE_USERNAME+':'+process.env.SAUCE_ACCESS_KEY+'@ondemand.saucelabs.com:80/wd/hub')
       .withCapabilities({
         'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
@@ -22,17 +22,17 @@ function createBrowser(browserName, url){
       }).build();
     }
 
-    return this.browser.get(url);
+    return context.browser.get(url);
   }
 }
-function quitBrowser(){
+function quitBrowser(context){
     return function(){
-      return this.browser.quit();
+      return context.browser.quit();
     }
 }
 
-function testTitle(done){
-  var headline = this.browser.findElement(webdriver.By.css('h3'));
+function testTitle(done, context){
+  var headline = context.browser.findElement(webdriver.By.css('h3'));
   headline.click();
   headline.getText().then(function(txt) {
     assert.equal(txt, "Les librairies FOCUS");
@@ -41,19 +41,19 @@ function testTitle(done){
 }
 
 describe('testing chrome', () => {
-  beforeEach(() => createBrowser('chrome', URL));
-  afterEach(() => quitBrowser);
-  it('should handle clicking on a headline', done => testTitle(done));
+  beforeEach(() => createBrowser('chrome', URL, this));
+  afterEach(() => quitBrowser(this));
+  it('should handle clicking on a headline', done => testTitle(done, this));
 });
 
 describe('testing firefox', () => {
-  beforeEach(() => createBrowser('firefox', URL));
-  afterEach(() => quitBrowser);
-  it('should handle clicking on a headline', done => testTitle(done));
+  beforeEach(() => createBrowser('firefox', URL, this));
+  afterEach(() => quitBrowser(this));
+  it('should handle clicking on a headline', done => testTitle(done, this));
 });
 
 describe('testing internet explorer', () => {
-  beforeEach(() => createBrowser('internet explorer', URL));
-  afterEach(() => quitBrowser);
-  it('should handle clicking on a headline', done => testTitle(done));
+  beforeEach(() => createBrowser('internet explorer', URL, this));
+  afterEach(() => quitBrowser(this));
+  it('should handle clicking on a headline', done => testTitle(done, this));
 });
