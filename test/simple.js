@@ -16,7 +16,7 @@ function createBrowser(browserName, url, context){
         browserName: browserName
       }).build();
     } else {
-      this.browser = new webdriver.Builder()
+      context.browser = new webdriver.Builder()
       .withCapabilities({
         browserName: browserName
       }).build();
@@ -41,21 +41,21 @@ function testTitle(done, context){
 }
 
 describe('testing chrome', () => {
-  var ctx = this;
+  var ctx = {};
   beforeEach(() => createBrowser('chrome', URL, ctx));
   afterEach(() => quitBrowser(ctx));
   it('should handle clicking on a headline', done => testTitle(done, ctx));
 });
 
 describe('testing firefox', () => {
-  var ctx = this;
+  var ctx = {};
   beforeEach(() => createBrowser('firefox', URL, ctx));
   afterEach(() => quitBrowser(ctx));
   it('should handle clicking on a headline', done => testTitle(done, ctx));
 });
 
 describe('testing internet explorer', () => {
-  var ctx = this;
+  var ctx = {};
   beforeEach(() => createBrowser('internet explorer', URL, ctx));
   afterEach(() => quitBrowser(ctx));
   it('should handle clicking on a headline', done => testTitle(done, ctx));
