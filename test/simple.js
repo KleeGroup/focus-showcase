@@ -40,21 +40,20 @@ function testTitle(done){
   });
 }
 
-describe("testing chrome", () => {
+describe('testing chrome', () => {
   beforeEach(() => createBrowser('chrome', URL));
   afterEach(() => quitBrowser);
-  it("should handle clicking on a headline", testTitle);
+  it('should handle clicking on a headline', done => testTitle(done));
 });
 
-describe("testing firefox", () => {
+describe('testing firefox', () => {
   beforeEach(() => createBrowser('firefox', URL));
   afterEach(() => quitBrowser);
-  it("should handle clicking on a headline", testTitle);
+  it('should handle clicking on a headline', done => testTitle(done));
 });
 
-
-describe("testing internet explorer", () => {
+describe('testing internet explorer', () => {
   beforeEach(() => createBrowser('internet explorer', URL));
   afterEach(() => quitBrowser);
-  it("should handle clicking on a headline", testTitle);
+  it('should handle clicking on a headline', done => testTitle(done));
 });
