@@ -30,14 +30,14 @@ function quitBrowser(){
       return this.browser.quit();
     }
 }
-function titleTest(done){
+
+function testTitle(done){
   var headline = this.browser.findElement(webdriver.By.css('h3'));
   headline.click();
   headline.getText().then(function(txt) {
     assert.equal(txt, "Les librairies FOCUS");
     done();
   });
-
 }
 
 describe("testing chrome", () => {
