@@ -43,20 +43,20 @@ function testTitle(done, context){
 describe('testing chrome', () => {
   var ctx = this;
   beforeEach(() => createBrowser('chrome', URL, ctx));
-  afterEach(() => quitBrowser(this));
+  afterEach(() => quitBrowser(ctx));
   it('should handle clicking on a headline', done => testTitle(done, ctx));
 });
 
 describe('testing firefox', () => {
   var ctx = this;
-  beforeEach(() => createBrowser('firefox', URL, this));
-  afterEach(() => quitBrowser(this));
+  beforeEach(() => createBrowser('firefox', URL, ctx));
+  afterEach(() => quitBrowser(ctx));
   it('should handle clicking on a headline', done => testTitle(done, ctx));
 });
 
 describe('testing internet explorer', () => {
   var ctx = this;
   beforeEach(() => createBrowser('internet explorer', URL, ctx));
-  afterEach(() => quitBrowser(this));
+  afterEach(() => quitBrowser(ctx));
   it('should handle clicking on a headline', done => testTitle(done, ctx));
 });
