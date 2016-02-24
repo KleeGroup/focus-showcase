@@ -37,3 +37,40 @@ describe("testing javascript in the browser", function() {
     });
   });
 });
+
+
+describe("testing javascript in the browser", function() {
+  beforeEach(function() {
+    if (process.env.SAUCE_USERNAME != undefined) {
+      this.browser = new webdriver.Builder()
+      .usingServer('http://'+ process.env.SAUCE_USERNAME+':'+process.env.SAUCE_ACCESS_KEY+'@ondemand.saucelabs.com:80/wd/hub')
+      .withCapabilities({
+        'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
+        build: process.env.TRAVIS_BUILD_NUMBER,
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY,
+        browserName: "firefox"
+      }).build();
+    } else {
+      this.browser = new webdriver.Builder()
+      .withCapabilities({
+        browserName: "chrome"
+      }).build();
+    }
+
+    return this.browser.get("http://getfocus.io");
+  });
+
+  afterEach(function() {
+    return this.browser.quit();
+  });
+
+  it("should handle clicking on a headline", function(done) {
+    var headline = this.browser.findElement(webdriver.By.css('h3'));
+    headline.click();
+    headline.getText().then(function(txt) {
+      assert.equal(txt, "Les librairies FOCUS");
+      done();
+    });
+  });
+});
