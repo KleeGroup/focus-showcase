@@ -54,7 +54,7 @@ describe("testing javascript in the browser", function() {
     } else {
       this.browser = new webdriver.Builder()
       .withCapabilities({
-        browserName: "chrome"
+        browserName: "firefox"
       }).build();
     }
 
