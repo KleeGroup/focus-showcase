@@ -64,7 +64,7 @@ describe('testing internet explorer', () => {
 
 
 const testGenerator = browsers => {
-  browsers.forEach(browserName => {
+  browsers.forEach({browserName, version} => {
     describe(`testing javascript in ${browserName}`, () => {
             
             beforeEach(() => {
@@ -76,12 +76,14 @@ const testGenerator = browsers => {
                    build: process.env.TRAVIS_BUILD_NUMBER,
                    username: process.env.SAUCE_USERNAME,
                    accessKey: process.env.SAUCE_ACCESS_KEY,
-                   browserName: browserName
+                   browserName: browserName,
+                   version: version
                  }).build();
                } else {
                  this.browser = new webdriver.Builder()
                  .withCapabilities({
-                   browserName: browserName
+                   browserName: browserName,
+                   version: version
                  }).build();
                }
 
@@ -102,4 +104,4 @@ const testGenerator = browsers => {
   });
 };
 
-testGenerator(['chrome', 'firefox', 'internet explorer', 'iPhone', 'iPad']);
+testGenerator(['chrome', 'firefox', 'internet explorer'/*, 'iPhone', 'iPad'*/]);
