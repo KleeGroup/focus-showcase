@@ -64,9 +64,11 @@ describe('testing internet explorer', () => {
 
 
 const testGenerator = browsers => {
-  browsers.forEach({browserName, version} => {
+  browsers.forEach(browser => {
+    const browserName = browser.name;
+    const version  = browser.version;
     describe(`testing javascript in ${browserName}`, () => {
-            
+
             beforeEach(() => {
               if (process.env.SAUCE_USERNAME != undefined) {
                  this.browser = new webdriver.Builder()
@@ -104,4 +106,4 @@ const testGenerator = browsers => {
   });
 };
 
-testGenerator(['chrome', 'firefox', 'internet explorer'/*, 'iPhone', 'iPad'*/]);
+testGenerator(require('./browsers'));
