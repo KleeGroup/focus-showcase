@@ -64,7 +64,7 @@ describe('testing internet explorer', () => {
 
 
 const testGenerator = browsers => {
-  browsers.forEach(browserName){
+  browsers.forEach(browserName => {
 
 describe("testing javascript in " + browserName, function() {
         beforeEach(function() {
