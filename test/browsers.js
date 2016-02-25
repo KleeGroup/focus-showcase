@@ -8,4 +8,9 @@ const BROWSERS = [
 //  {name: 'iPad', versions: [9]}
 ];
 
-module.exports = BROWSERS.reduce((res, current) => [...res, ...current.versions.reduce((r, c) => [...r, {name: current.name, version: c}], [])], []);
+//module.exports = BROWSERS.reduce((res, current) => [...res, ...current.versions.reduce((r, c) => [...r, {name: current.name, version: c}], [])], []);
+module.exports = BROWSERS.reduce(function (res, current) {
+  return [].concat(res, current.versions.reduce(function (r, c) {
+    return [].concat(r, [{ name: current.name, version: c }]);
+  }, []));
+}, []);
