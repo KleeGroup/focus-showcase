@@ -62,7 +62,6 @@ describe('testing internet explorer', () => {
 });
 */
 
-
 const testGenerator = browsers => {
   browsers.forEach(browser => {
     const browserName = browser.name;
@@ -99,6 +98,15 @@ const testGenerator = browsers => {
            headline.click();
            headline.getText().then(txt => {
              assert.equal(txt, "Les librairies FOCUS");
+             done();
+           });
+         });
+         it('should handle clicking on an other page', done => {
+           this.browser.get('http://getfocus.io/position-offer/');
+           const headline = this.browser.findElement(webdriver.By.css('h2'));
+           headline.click();
+           headline.getText().then(txt => {
+             assert.equal(txt, "Développeur front-end");
              done();
            });
          });
