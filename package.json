@@ -8,7 +8,7 @@
     "start": "npm run start:npm",
     "start:local": "better-npm-run webpack-dev-server-local-focus",
     "start:npm": "better-npm-run webpack-dev-server-npm-focus",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 20000"
   },
   "babel": {
     "presets": [
