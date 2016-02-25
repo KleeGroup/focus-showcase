@@ -66,7 +66,7 @@ describe('testing internet explorer', () => {
 const testGenerator = browsers => {
   browsers.forEach(browserName => {
     describe(`testing javascript in ${browserName}`, () => {
-            this.timeout(15 * 1000);
+            
             beforeEach(() => {
               if (process.env.SAUCE_USERNAME != undefined) {
                  this.browser = new webdriver.Builder()
