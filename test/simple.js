@@ -66,7 +66,7 @@ const testGenerator = browsers => {
   browsers.forEach(browser => {
     const browserName = browser.name;
     const version  = browser.version;
-    describe(`testing javascript in ${browserName}`, () => {
+    describe(`testing javascript in ${browserName} version ${version}`, () => {
 
             beforeEach(() => {
               if (process.env.SAUCE_USERNAME != undefined) {
