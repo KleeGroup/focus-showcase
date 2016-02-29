@@ -94,8 +94,9 @@
     "application/popin",
     "components/confirm",
     "search/search-bar",
+    "search/facet-box",
     "page/search/quick-search",
-    "search/facet-box"
+    "page/search/advanced-search"
   ],
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
