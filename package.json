@@ -94,6 +94,7 @@
     "application/popin",
     "components/confirm",
     "search/search-bar",
+    "search/facet-box",
     "page/search/quick-search"
   ],
   "devDependencies": {
