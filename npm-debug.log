@@ -1,0 +1,40 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'start:local' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose run-script [ 'prestart:local', 'start:local', 'poststart:local' ]
+5 info prestart:local focus-showcase@0.0.1
+6 info start:local focus-showcase@0.0.1
+7 verbose unsafe-perm in lifecycle true
+8 info focus-showcase@0.0.1 Failed to exec start:local script
+9 verbose stack Error: focus-showcase@0.0.1 start:local: `better-npm-run webpack-dev-server-local-focus`
+9 verbose stack Exit status 3
+9 verbose stack     at EventEmitter.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\lifecycle.js:214:16)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at EventEmitter.emit (events.js:172:7)
+9 verbose stack     at ChildProcess.<anonymous> (C:\Program Files\nodejs\node_modules\npm\lib\utils\spawn.js:24:14)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at ChildProcess.emit (events.js:172:7)
+9 verbose stack     at maybeClose (internal/child_process.js:818:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+10 verbose pkgid focus-showcase@0.0.1
+11 verbose cwd D:\Projets\Focus\focus-showcase
+12 error Windows_NT 10.0.10240
+13 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "start:local"
+14 error node v4.2.1
+15 error npm  v2.14.7
+16 error code ELIFECYCLE
+17 error focus-showcase@0.0.1 start:local: `better-npm-run webpack-dev-server-local-focus`
+17 error Exit status 3
+18 error Failed at the focus-showcase@0.0.1 start:local script 'better-npm-run webpack-dev-server-local-focus'.
+18 error This is most likely a problem with the focus-showcase package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     better-npm-run webpack-dev-server-local-focus
+18 error You can get their info via:
+18 error     npm owner ls focus-showcase
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]
