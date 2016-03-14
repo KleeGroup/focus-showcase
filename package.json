@@ -98,7 +98,8 @@
     "page/search/quick-search",
     "page/search/advanced-search",
     "common/button/action",
-    "common/grid"
+    "common/grid",
+    "list/summary"
   ],
   "devDependencies": {
     "assert": "^1.3.0",
