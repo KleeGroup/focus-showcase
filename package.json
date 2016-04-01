@@ -87,6 +87,7 @@
     "components/input/textarea",
     "components/input/toggle",
     "components/input/autocomplete-select",
+    "components/input/autocomplete-text",
     "components/layout",
     "components/menu",
     "components/message-center",
