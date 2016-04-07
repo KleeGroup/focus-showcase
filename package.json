@@ -99,7 +99,8 @@
     "search/facet-box",
     "page/search/quick-search",
     "page/search/advanced-search",
-    "common/button/action",
+    "components/button/action",
+    "components/button/back-to-top",
     "common/grid",
     "list/summary"
   ],
