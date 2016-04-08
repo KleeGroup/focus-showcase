@@ -1,156 +1,157 @@
 {
-  "name": "focus-showcase",
-  "version": "0.0.1",
-  "description": "Focus showcase",
-  "main": "index.js",
-  "scripts": {
-    "build": "better-npm-run bundle",
-    "start": "npm run start:npm",
-    "start:local": "better-npm-run webpack-dev-server-local-focus",
-    "start:npm": "better-npm-run webpack-dev-server-npm-focus",
-    "test": "mocha --timeout 20000"
-  },
-  "babel": {
-    "presets": [
-      "stage-0",
-      "react",
-      "es2015"
+    "name": "focus-showcase",
+    "version": "0.0.1",
+    "description": "Focus showcase",
+    "main": "index.js",
+    "scripts": {
+        "build": "better-npm-run bundle",
+        "start": "npm run start:npm",
+        "start:local": "better-npm-run webpack-dev-server-local-focus",
+        "start:npm": "better-npm-run webpack-dev-server-npm-focus",
+        "test": "mocha --timeout 20000"
+    },
+    "babel": {
+        "presets": [
+            "stage-0",
+            "react",
+            "es2015"
+        ],
+        "plugins": [
+            "transform-class-properties",
+            "transform-decorators-legacy",
+            "add-module-exports"
+        ]
+    },
+    "betterScripts": {
+        "bundle": {
+            "command": "webpack --progress",
+            "env": {
+                "ANCHOR_CLASS": "focus-showcase",
+                "BABELIFIED_PATH": "./src",
+                "ENTRY_FILE_PATH": "./src/app",
+                "PAGE_TITLE": "Focus showcase",
+                "LOCAL_FOCUS": true,
+                "GENERATE_HTML": false,
+                "OUTPUT_DIR": ".",
+                "NODE_ENV": "production",
+                "MINIMIFY": false
+            }
+        },
+        "webpack-dev-server-local-focus": {
+            "command": "node ./dev-server.js",
+            "env": {
+                "ANCHOR_CLASS": "focus-showcase",
+                "BABELIFIED_PATH": "./src",
+                "ENTRY_FILE_PATH": "./src/app",
+                "PAGE_TITLE": "Focus showcase",
+                "LOCAL_FOCUS": true,
+                "GENERATE_HTML": false,
+                "OUTPUT_DIR": "."
+            }
+        },
+        "webpack-dev-server-npm-focus": {
+            "command": "node ./dev-server.js",
+            "env": {
+                "ANCHOR_CLASS": "focus-showcase",
+                "BABELIFIED_PATH": "./src",
+                "ENTRY_FILE_PATH": "./src/app",
+                "PAGE_TITLE": "Focus showcase",
+                "LOCAL_FOCUS": false,
+                "GENERATE_HTML": false,
+                "OUTPUT_DIR": "."
+            }
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KleeGroup/focus-showcase.git"
+    },
+    "keywords": [
+        "focus",
+        "showcase",
+        "components",
+        "swag"
     ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-decorators-legacy",
-      "add-module-exports"
-    ]
-  },
-  "betterScripts": {
-    "bundle": {
-      "command": "webpack --progress",
-      "env": {
-        "ANCHOR_CLASS": "focus-showcase",
-        "BABELIFIED_PATH": "./src",
-        "ENTRY_FILE_PATH": "./src/app",
-        "PAGE_TITLE": "Focus showcase",
-        "LOCAL_FOCUS": true,
-        "GENERATE_HTML": false,
-        "OUTPUT_DIR": ".",
-        "NODE_ENV": "production",
-        "MINIMIFY": false
-      }
+    "author": "focus@kleegroup.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/KleeGroup/focus-showcase/issues"
     },
-    "webpack-dev-server-local-focus": {
-      "command": "node ./dev-server.js",
-      "env": {
-        "ANCHOR_CLASS": "focus-showcase",
-        "BABELIFIED_PATH": "./src",
-        "ENTRY_FILE_PATH": "./src/app",
-        "PAGE_TITLE": "Focus showcase",
-        "LOCAL_FOCUS": true,
-        "GENERATE_HTML": false,
-        "OUTPUT_DIR": "."
-      }
-    },
-    "webpack-dev-server-npm-focus": {
-      "command": "node ./dev-server.js",
-      "env": {
-        "ANCHOR_CLASS": "focus-showcase",
-        "BABELIFIED_PATH": "./src",
-        "ENTRY_FILE_PATH": "./src/app",
-        "PAGE_TITLE": "Focus showcase",
-        "LOCAL_FOCUS": false,
-        "GENERATE_HTML": false,
-        "OUTPUT_DIR": "."
-      }
+    "homepage": "https://github.com/KleeGroup/focus-showcase#readme",
+    "components": [
+        "common/form",
+        "components/input/checkbox",
+        "components/input/date",
+        "components/input/select",
+        "components/input/text",
+        "components/input/textarea",
+        "components/input/toggle",
+        "components/input/autocomplete-select",
+        "components/input/autocomplete-text",
+        "components/layout",
+        "components/menu",
+        "components/message-center",
+        "components/panel",
+        "components/scrollspy-container",
+        "application/popin",
+        "components/confirm",
+        "search/search-bar",
+        "search/facet-box",
+        "page/search/quick-search",
+        "page/search/advanced-search",
+        "components/button",
+        "components/button-back-to-top",
+        "components/grid",
+        "list/summary"
+    ],
+    "devDependencies": {
+        "assert": "^1.3.0",
+        "autoprefixer-loader": "^3.2.0",
+        "babel": "^6.3.26",
+        "babel-cli": "^6.4.5",
+        "babel-core": "^6.4.5",
+        "babel-eslint": "^5.0.0-beta6",
+        "babel-loader": "^6.2.1",
+        "babel-plugin-add-module-exports": "^0.1.2",
+        "babel-plugin-transform-class-properties": "^6.4.0",
+        "babel-plugin-transform-decorators-legacy": "^1.3.4",
+        "babel-polyfill": "^6.3.14",
+        "babel-preset-es2015": "^6.3.13",
+        "babel-preset-react": "^6.3.13",
+        "babel-preset-stage-0": "^6.3.13",
+        "babel-runtime": "^6.5.0",
+        "babel-standalone": "^6.4.4",
+        "better-npm-run": "0.0.5",
+        "brace": "^0.5.1",
+        "css-loader": "^0.19.0",
+        "extract-text-webpack-plugin": "^0.8.2",
+        "file-loader": "^0.8.4",
+        "focus-core": "0.14.0-beta0",
+        "focus-components": "0.14.0-beta1",
+        "font-awesome": "^4.5.0",
+        "highlight.js": "^8.8.0",
+        "jquery": "^2.1.4",
+        "json-loader": "^0.5.3",
+        "lodash": "^3.10.1",
+        "lunr": "^0.5.12",
+        "material-design-icons-iconfont": "^2.0.4",
+        "mocha": "^2.4.4",
+        "moment": "^2.11.2",
+        "node-sass": "^3.3.3",
+        "numeral": "^1.5.3",
+        "opener": "^1.4.1",
+        "raw-loader": "^0.5.1",
+        "react": "^0.14.7",
+        "react-ace": "^2.5.0",
+        "react-dom": "^0.14.7",
+        "react-hot-loader": "^1.3.0",
+        "sass-loader": "^3.0.0",
+        "selenium-webdriver": "^2.48.2",
+        "source-map-loader": "^0.1.5",
+        "style-loader": "^0.12.4",
+        "url-loader": "^0.5.6",
+        "webpack": "^1.12.13",
+        "webpack-dev-server": "^1.14.1",
+        "webpack-focus": "^0.11.0"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KleeGroup/focus-showcase.git"
-  },
-  "keywords": [
-    "focus",
-    "showcase",
-    "components",
-    "swag"
-  ],
-  "author": "focus@kleegroup.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/KleeGroup/focus-showcase/issues"
-  },
-  "homepage": "https://github.com/KleeGroup/focus-showcase#readme",
-  "components": [
-    "common/form",
-    "components/input/checkbox",
-    "components/input/date",
-    "components/input/select",
-    "components/input/text",
-    "components/input/textarea",
-    "components/input/toggle",
-    "components/input/autocomplete-select",
-    "components/input/autocomplete-text",
-    "components/layout",
-    "components/menu",
-    "components/message-center",
-    "components/panel",
-    "components/scrollspy-container",
-    "application/popin",
-    "components/confirm",
-    "search/search-bar",
-    "search/facet-box",
-    "page/search/quick-search",
-    "page/search/advanced-search",
-    "common/button/action",
-    "common/grid",
-    "list/summary"
-  ],
-  "devDependencies": {
-    "assert": "^1.3.0",
-    "autoprefixer-loader": "^3.2.0",
-    "babel": "^6.3.26",
-    "babel-cli": "^6.4.5",
-    "babel-core": "^6.4.5",
-    "babel-eslint": "^5.0.0-beta6",
-    "babel-loader": "^6.2.1",
-    "babel-plugin-add-module-exports": "^0.1.2",
-    "babel-plugin-transform-class-properties": "^6.4.0",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-polyfill": "^6.3.14",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
-    "babel-runtime": "^6.5.0",
-    "babel-standalone": "^6.4.4",
-    "better-npm-run": "0.0.5",
-    "brace": "^0.5.1",
-    "css-loader": "^0.19.0",
-    "extract-text-webpack-plugin": "^0.8.2",
-    "file-loader": "^0.8.4",
-    "focus-core": "0.14.0-beta0",
-    "focus-components": "0.14.0-beta1",
-    "font-awesome": "^4.5.0",
-    "highlight.js": "^8.8.0",
-    "jquery": "^2.1.4",
-    "json-loader": "^0.5.3",
-    "lodash": "^3.10.1",
-    "lunr": "^0.5.12",
-    "material-design-icons-iconfont": "^2.0.4",
-    "mocha": "^2.4.4",
-    "moment": "^2.11.2",
-    "node-sass": "^3.3.3",
-    "numeral": "^1.5.3",
-    "opener": "^1.4.1",
-    "raw-loader": "^0.5.1",
-    "react": "^0.14.7",
-    "react-ace": "^2.5.0",
-    "react-dom": "^0.14.7",
-    "react-hot-loader": "^1.3.0",
-    "sass-loader": "^3.0.0",
-    "selenium-webdriver": "^2.48.2",
-    "source-map-loader": "^0.1.5",
-    "style-loader": "^0.12.4",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.12.13",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-focus": "^0.11.0"
-  }
 }
