@@ -99,9 +99,9 @@
         "search/facet-box",
         "page/search/quick-search",
         "page/search/advanced-search",
-        "components/button/action",
-        "components/button/back-to-top",
-        "common/grid",
+        "components/button",
+        "components/button-back-to-top",
+        "components/grid",
         "list/summary"
     ],
     "devDependencies": {
