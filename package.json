@@ -101,6 +101,7 @@
         "page/search/advanced-search",
         "components/button",
         "components/button-back-to-top",
+        "components/icon",
         "components/grid",
         "list/summary"
     ],
