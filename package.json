@@ -45,7 +45,7 @@
                 "ENTRY_FILE_PATH": "./src/app",
                 "PAGE_TITLE": "Focus showcase",
                 "LOCAL_FOCUS": true,
-                "GENERATE_HTML": false,
+                "GENERATE_HTML": true,
                 "OUTPUT_DIR": "."
             }
         },
@@ -127,8 +127,8 @@
         "css-loader": "^0.19.0",
         "extract-text-webpack-plugin": "^0.8.2",
         "file-loader": "^0.8.4",
-        "focus-core": "0.14.0-beta0",
-        "focus-components": "0.14.0-beta1",
+        "focus-core": "0.14.0",
+        "focus-components": "0.14.0",
         "font-awesome": "^4.5.0",
         "highlight.js": "^8.8.0",
         "jquery": "^2.1.4",
