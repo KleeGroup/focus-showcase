@@ -17,6 +17,5 @@ const customConfig = localFocus ? {
 
 module.exports = configBuilder(customConfig, {
     __LOCAL_FOCUS__: localFocus,
-    __FOCUS_COMPONENTS_RELATIVE_PATH__: localFocus ? "'../../focus-components/'" : "'../node_modules/focus-components/'",
-    entry: ['babel-polyfill', './app/js']
+    __FOCUS_COMPONENTS_RELATIVE_PATH__: localFocus ? "'../../focus-components/'" : "'../node_modules/focus-components/'"
 });

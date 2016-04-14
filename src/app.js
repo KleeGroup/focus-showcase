@@ -1,3 +1,4 @@
+import 'babel-preset-focus/dist/focus-polyfill';
 import React from 'react';
 import FocusComponents from 'focus-components';
 import FocusCore  from 'focus-core';
@@ -9,10 +10,12 @@ import './service/create-index';
 import history from 'focus-core/history';
 import {init} from 'focus-core/translation';
 import user from 'focus-core/user';
-import "babel-polyfill";
 
 jQuery.getScript('https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js', () => {
-
+    //Init index
+    init({resStore, lng: 'dev'}, () => {
+        history.start();
+    });
 });
 
 // Neeeded for the live examples
@@ -30,11 +33,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
             evt.preventDefault();
             history.navigate(href.attr, true);
         }
-    });
-
-    //Init index
-    init({resStore, lng: 'dev'}, () => {
-        history.start();
     });
 });
 
