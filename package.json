@@ -82,6 +82,8 @@
     "components": [
         "common/form",
         "components/input/checkbox",
+        "components/input/select-checkbox",
+        "components/input/select-radio",
         "components/input/date",
         "components/input/select",
         "components/input/text",
