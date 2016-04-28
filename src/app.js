@@ -1,4 +1,3 @@
-import 'babel-preset-focus/dist/focus-polyfill';
 import React from 'react';
 import FocusComponents from 'focus-components';
 import FocusCore  from 'focus-core';

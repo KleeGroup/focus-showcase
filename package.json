@@ -24,7 +24,7 @@
                 "ENTRY_FILE_PATH": "./src/app",
                 "PAGE_TITLE": "Focus showcase",
                 "LOCAL_FOCUS": true,
-                "GENERATE_HTML": false,
+                "GENERATE_HTML": true,
                 "OUTPUT_DIR": ".",
                 "OUTPUT_PUBLIC_PATH": "",
                 "NODE_ENV": "production",
@@ -76,6 +76,7 @@
     "components": [
         "common/form",
         "components/input/checkbox",
+        "components/input/radio",
         "components/input/select-checkbox",
         "components/input/select-radio",
         "components/input/date",
