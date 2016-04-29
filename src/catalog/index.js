@@ -46,9 +46,9 @@ class ComponentCatalog extends Component{
         };
         return (
             <div className='demo-layout-waterfall mdl-layout mdl-js-layout'>
-                <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--green' style={headerStyle}>
+                <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--white mdl-shadow--3dp' style={headerStyle}>
                     <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--align-left" style={searchComponentStyle}>
-                        <i className='material-icons'>search</i>
+                        <i className='material-icons mdl-color-text--black'>search</i>
                         <form>
                             <div className="mdl-textfield mdl-js-textfield" ref='search-input'>
                                 <input className="mdl-textfield__input" type="text" id='search-catalog' ref='input' value={query}/>
