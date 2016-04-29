@@ -30,12 +30,37 @@ class ComponentCatalog extends Component{
     render(){
         const {store, query} = this.props;
         const props = {...this.props, showLiveComponent: this._showLiveComponent.bind(this)};
+        const searchIconStyle = {
+            marginRight: '5px',
+            paddingTop: '4px'
+        };
+        const searchComponentStyle = {
+            display: 'flex',
+            marginLeft: '20px'
+        };
+        const headerStyle = {
+            height: '40px',
+            display: 'flex',
+            zIndex: '2',
+            paddingTop: '13px'
+        };
         return (
-            <div data-focus='catalog'>
-                <div className='mdl-shadow--2dp' data-focus='detail-header'>
-                    <CatalogSearch store={store} query={query}/>
+            <div className='demo-layout-waterfall mdl-layout mdl-js-layout'>
+                <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--green' style={headerStyle}>
+                    <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--align-left" style={searchComponentStyle}>
+                        <i className='material-icons'>search</i>
+                        <form>
+                            <div className="mdl-textfield mdl-js-textfield" ref='search-input'>
+                                <input className="mdl-textfield__input" type="text" id='search-catalog' ref='input' value={query}/>
+                                <label className="mdl-textfield__label" htmlFor='search-catalog'>Component search</label>
+                            </div>
+                        </form>
+                    </div>
+                </header>
+
+                <div data-focus='catalog'>
+                    <ListPage {...props}/>
                 </div>
-                <ListPage {...props}/>
             </div>
         );
     }
