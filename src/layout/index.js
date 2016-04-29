@@ -44,7 +44,7 @@ const Layout = React.createClass({
                 <nav className='demo-navigation mdl-navigation'>
                     <div className='tags-list'>
                         <h3>Components</h3>
-                        {links.map((link, idx)=>{
+                        {links.map((link, idx) => {
                             return <a className='mdl-navigation__link' key={idx} href={link.url || '/'}><i className='fa fa-puzzle-piece' role='presentation'></i>{link.content}</a>
                         })}
                     </div>

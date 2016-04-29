@@ -71,11 +71,21 @@ class ComponentSearch extends Component{
         const {criteria} = this.state;
         const {query} = criteria;
         const {input} = style;
+        const searchComponentStyle = {
+            display: 'flex',
+            marginLeft: '20px'
+        };
+        const headerStyle = {
+            height: '40px',
+            display: 'flex',
+            zIndex: '2',
+            paddingTop: '13px'
+        };
         return (
-            <div data-focus='component-search'>
-                <i className='material-icons'>search</i>
+            <div className="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--align-left" style={searchComponentStyle}>
+                <i className='material-icons mdl-color-text--black'>search</i>
                 <form onSubmit={e => {e.preventDefault();}}>
-                    <div className="mdl-textfield mdl-js-textfield" ref='search-input'>
+                    <div className="mdl-textfield mdl-js-textfield mdl-color-text--black" ref='search-input'>
                         <input className="mdl-textfield__input" type="text" id='search-catalog' onChange={this._handleOnChange} ref='input' value={query}/>
                         <label className="mdl-textfield__label" htmlFor='search-catalog'>Component search</label>
                     </div>
