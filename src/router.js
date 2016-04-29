@@ -7,10 +7,11 @@ import Sandbox from './live-component';
 import componentsStore from './store/components';
 import getComponentFromName  from './service/get-component-from-name';
 import Detail from './component-detail';
-import tags from './service/get-tags';
+// import tags from './service/get-tags';
+import catalog from './components-catalog';
 import {dispatcher} from 'focus-core';
 
-const links = tags.map(tag => ({url: `#query/${tag}`, content: tag}));
+const links = catalog.map((component, idx) => ({url: `#query/${component.name}`, content: component.name}));
 
 const ShowCaseRouter = router.extend({
     routes: {

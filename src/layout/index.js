@@ -2,17 +2,6 @@
 
 import types from 'focus-core/component/types';
 import React from 'react';
-import catalog from '../components-catalog';
-catalog.map((component, idx) => {
-    console.log('component', component.name);
-    console.log('idx', idx);
-})
-
-
-// links.map((link, idx)=>{
-//     console.log('link', link);
-//     console.log('idx', idx);
-// });
 
 // Mixins
 
@@ -55,8 +44,8 @@ const Layout = React.createClass({
                 <nav className='demo-navigation mdl-navigation'>
                     <div className='tags-list'>
                         <h3>Tags</h3>
-                        {catalog.map((component, idx)=>{
-                            return <a className='mdl-navigation__link' key={idx} href={'#query/' + component.name || '/'}><i className='fa fa-puzzle-piece' role='presentation'></i>{component.name}</a>
+                        {links.map((link, idx)=>{
+                            return <a className='mdl-navigation__link' key={idx} href={link.url || '/'}><i className='fa fa-puzzle-piece' role='presentation'></i>{link.content}</a>
                         })}
                     </div>
                     <div className='brand-powered'><a href="http://www.kleegroup.com">Propulsé par</a></div>
