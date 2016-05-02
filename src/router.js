@@ -5,8 +5,6 @@ import Catalog from './catalog';
 import Layout from './layout';
 import NewLayout from './new-layout';
 import Test from './test';
-import SearchCartridgeContent from './SearchCartridgeContent';
-import SearchCartridgeSummary from './SearchCartridgeSummary';
 import Sandbox from './live-component';
 import componentsStore from './store/components';
 import getComponentFromName  from './service/get-component-from-name';
@@ -32,7 +30,7 @@ const ShowCaseRouter = router.extend({
         console.log('test page');
         // render the showcase into the document
         return ReactDOM.render(
-            <Test searchCartridgeContent={SearchCartridgeContent} searchCartridgeSummary={SearchCartridgeSummary} links={links}><Catalog store={componentsStore} query=''/></Test>,
+            <Test links={links}><Catalog store={componentsStore} query=''/></Test>,
             document.querySelector(`.${__ANCHOR_CLASS__}`)
         );
     },
