@@ -86,7 +86,7 @@ class ComponentSearch extends Component{
                 <i className='material-icons mdl-color-text--black'>search</i>
                 <form onSubmit={e => {e.preventDefault();}}>
                     <div className="mdl-textfield mdl-js-textfield mdl-color-text--black" ref='search-input'>
-                        <input className="mdl-textfield__input" type="text" id='search-catalog' onChange={this._handleOnChange} ref='input' value={query} autoFocus={true}/>
+                        <input className="mdl-textfield__input" type="text" id='search-catalog' onChange={this._handleOnChange} ref='input' value={query}/>
                         <label className="mdl-textfield__label" htmlFor='search-catalog'>Component search</label>
                     </div>
                 </form>

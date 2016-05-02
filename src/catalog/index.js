@@ -37,14 +37,8 @@ class ComponentCatalog extends Component{
             paddingTop: '13px'
         };
         return (
-            <div className='demo-layout-waterfall mdl-layout mdl-js-layout'>
-                <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--white mdl-shadow--3dp' style={headerStyle}>
-                    <CatalogSearch store={store} query={query}/>
-                </header>
-
-                <div data-focus='catalog'>
-                    <ListPage {...props}/>
-                </div>
+            <div data-focus='catalog'>
+                <ListPage {...props}/>
             </div>
         );
     }

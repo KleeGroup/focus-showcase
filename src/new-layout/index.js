@@ -1,13 +1,11 @@
 // Dependencies
-
 import types from 'focus-core/component/types';
 import React from 'react';
 
 // Mixins
-
 import i18nBehaviour from 'focus-components/common/i18n/mixin';
 
-const Layout = React.createClass({
+const NewLayout = React.createClass({
     displayName: 'ShowcaseLayout',
     mixins: [i18nBehaviour],
 
@@ -61,4 +59,4 @@ const Layout = React.createClass({
     }
 });
 
-module.exports = Layout;
+module.exports = NewLayout;

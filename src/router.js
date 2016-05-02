@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import Catalog from './catalog';
 import Layout from './layout';
+import NewLayout from './new-layout';
+import Test from './test';
+import SearchCartridgeContent from './SearchCartridgeContent';
+import SearchCartridgeSummary from './SearchCartridgeSummary';
 import Sandbox from './live-component';
 import componentsStore from './store/components';
 import getComponentFromName  from './service/get-component-from-name';
@@ -16,11 +20,29 @@ const links = catalog.map((component, idx) => ({url: `#query/${component.name}`,
 const ShowCaseRouter = router.extend({
     routes: {
         '': 'showcase',
+        'test': 'GoToText',
+        'new-layout': 'GoToLayout',
         'component/:name': 'component',
         'component/:name/detail': 'componentDetail',
         'query': 'showcase',
         'query/:query': 'query',
         '*notFound': 'showcase'
+    },
+    GoToText() {
+        console.log('test page');
+        // render the showcase into the document
+        return ReactDOM.render(
+            <Test searchCartridgeContent={SearchCartridgeContent} searchCartridgeSummary={SearchCartridgeSummary} links={links}><Catalog store={componentsStore} query=''/></Test>,
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
+        );
+    },
+    GoToLayout() {
+        console.log('NewLayout');
+        // render the showcase into the document
+        return ReactDOM.render(
+            <NewLayout title='Component catalog' links={links}><Test/></NewLayout>,
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
+        );
     },
     showcase(){
         console.log('showcase');

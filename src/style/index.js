@@ -1,4 +1,5 @@
 import './template.scss';
+import '../test/style/style.css';
 import './demo.scss';
 import 'focus-components/style';
 import 'highlight.js/styles/default.css';
