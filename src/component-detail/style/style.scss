@@ -13,7 +13,7 @@ $header-height: 80px;
         @media (min-width: 1024px) {
             width: calc(100vw - 260px);
         }
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         height: $header-height;
@@ -32,7 +32,7 @@ $header-height: 80px;
         [data-focus='demo-button'] {
             position: absolute;
             top: 50px;
-            right: 56px;
+            right: 66px;
         }
 
         [data-focus='title'] {

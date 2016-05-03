@@ -23,6 +23,7 @@ class ComponentDetail extends Component{
     /** @inheriteDoc */
     render() {
         const {name, capture, description, example, photo, keywords, version, code} = this.props;
+        console.log('NAME', name);
         return (
             <div data-focus='component-detail'>
                 <div className='mdl-shadow--2dp' data-focus='detail-header'>
@@ -35,7 +36,7 @@ class ComponentDetail extends Component{
                     <div data-focus='title'>
                         <h2>{`${capitalize(name)} - v${version}`}</h2>
                     </div>
-                    <button className='mdl-button mdl-js-button mdl-button--fab mdl-button--accent' onClick={()=>{history.navigate(`component/${name}/detail`, true)}} data-focus='demo-button'>
+                    <button className='mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--accent' onClick={()=>{history.navigate(`component/${name}/detail`, true)}} data-focus='demo-button'>
                         <i className="material-icons">code</i>
                     </button>
                 </div>
