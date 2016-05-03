@@ -11,7 +11,7 @@ import Detail from './component-detail';
 import catalog from './components-catalog';
 import {dispatcher} from 'focus-core';
 
-const links = catalog.map((component, idx) => ({url: `#query/${component.name}`, content: component.name}));
+const links = catalog.map((component, idx) => ({url: `#component/${component.name}`, content: component.name}));
 
 const ShowCaseRouter = router.extend({
     routes: {
