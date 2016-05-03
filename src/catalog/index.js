@@ -33,9 +33,9 @@ class ComponentCatalog extends Component{
         return (
             <div className='demo-layout-waterfall mdl-layout mdl-js-layout' data-focus='catalog'>
                 <div data-focus='catalog'>
-                    <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--white mdl-shadow--3dp' data-focus='detail-header'>
+                    <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--white mdl-shadow--2dp' data-focus='detail-header'>
                         <CatalogSearch store={store} query={query}/>
-                        <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="code" data-focus='code-button'>
+                        <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="code" data-focus='code-button'>
                             <i className="material-icons" role="presentation">code</i>
                             <span className="visuallyhidden">Code</span>
                         </button>

@@ -13,10 +13,10 @@
         position: absolute;
         top: 0;
         right: 0;
-        height: 40px;
+        height: 80px;
         display: flex;
         z-index: 2;
-        padding-top: 13px;
+        padding-top: 25px;
         overflow: visible;
         [data-focus='component-search'] {
             display: flex;
@@ -28,9 +28,9 @@
         }
         [data-focus='code-button'] {
             position: absolute;
-            top: 36px;
+            top: 50px;
             z-index: 999;
-            right: 56px;
+            right: 66px;
         }
     }
 
