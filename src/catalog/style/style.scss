@@ -17,6 +17,7 @@
         display: flex;
         z-index: 2;
         padding-top: 13px;
+        overflow: visible;
         [data-focus='component-search'] {
             display: flex;
             margin-left: 20px;
@@ -24,6 +25,12 @@
                 margin-right: 5px;
                 padding-top: 4px;
             }
+        }
+        [data-focus='code-button'] {
+            position: absolute;
+            top: 36px;
+            z-index: 999;
+            right: 56px;
         }
     }
 

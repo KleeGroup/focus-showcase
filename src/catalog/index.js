@@ -30,15 +30,18 @@ class ComponentCatalog extends Component{
     render(){
         const {store, query} = this.props;
         const props = {...this.props, showLiveComponent: this._showLiveComponent.bind(this)};
-        const headerStyle = {
-            height: '40px',
-            display: 'flex',
-            zIndex: '2',
-            paddingTop: '13px'
-        };
         return (
-            <div data-focus='catalog'>
-                <ListPage {...props}/>
+            <div className='demo-layout-waterfall mdl-layout mdl-js-layout' data-focus='catalog'>
+                <div data-focus='catalog'>
+                    <header className='mdl-layout__header mdl-layout__header--waterfall mdl-color--white mdl-shadow--3dp' data-focus='detail-header'>
+                        <CatalogSearch store={store} query={query}/>
+                        <button className="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="code" data-focus='code-button'>
+                            <i className="material-icons" role="presentation">code</i>
+                            <span className="visuallyhidden">Code</span>
+                        </button>
+                    </header>
+                    <ListPage {...props}/>
+                </div>
             </div>
         );
     }
