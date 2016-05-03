@@ -29,6 +29,12 @@ $header-height: 80px;
             }
         }
 
+        [data-focus='demo-button'] {
+            position: absolute;
+            top: 50px;
+            right: 56px;
+        }
+
         [data-focus='title'] {
             flex: 1;
             padding: 15px;
@@ -74,24 +80,6 @@ $header-height: 80px;
                 color: $primary_text
             }
 
-        }
-    }
-
-    [data-focus='demo-button'] {
-        position: fixed;
-        padding: 20px;
-        bottom: 10px;
-        right: 10px;
-        z-index: 1;
-        button {
-            background-color: $primary;
-            font-size: 1.3em;
-            &:hover {
-                background-color: $dark_primary;
-            }
-            .material-icons {
-                font-size: 1.3em;
-            }
         }
     }
 
