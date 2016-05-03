@@ -15,7 +15,7 @@ const propTypes = {
 
 class LivePreview extends Component {
     componentWillMount() {
-        
+
     }
 
     _renderFullScreen(content) {
@@ -29,23 +29,9 @@ class LivePreview extends Component {
     _renderTiled = (content) => {
         const {name, version} = this.props;
         return (
-            <div data-focus='showcase-live-preview' data-screen='tiled'>
-                <div className='mdl-shadow--2dp' data-focus='header'>
-                    <div data-focus='back'>
-                        <button className='mdl-button mdl-js-button' onClick={()=>{history.navigate(`component/${name}`, true);}}>
-                            <i className="material-icons">navigate_before</i>
-                            <i className="material-icons">extension</i>
-                        </button>
-                    </div>
-                    <div data-focus='title'>
-                        <h2>{`${capitalize(name)} - v${version}`}</h2>
-                    </div>
-                </div>
-
-                <div data-focus='background'>
-                    <div className='mdl-shadow--2dp' data-focus='component'>
-                        {content}
-                    </div>
+            <div data-focus='background'>
+                <div className='mdl-shadow--2dp' data-focus='component'>
+                    {content}
                 </div>
             </div>
         );
