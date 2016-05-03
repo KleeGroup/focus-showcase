@@ -7,16 +7,19 @@ import Sandbox from './live-component';
 import componentsStore from './store/components';
 import getComponentFromName  from './service/get-component-from-name';
 import Detail from './component-detail';
+import QuickShow from './quick-show';
+
 // import tags from './service/get-tags';
 import catalog from './components-catalog';
 import {dispatcher} from 'focus-core';
 
-const links = catalog.map((component, idx) => ({url: `#component/${component.name}`, content: component.name}));
+const links = catalog.map((component, idx) => ({url: `#component/${component.name}/quick-show`, content: component.name}));
 
 const ShowCaseRouter = router.extend({
     routes: {
         '': 'showcase',
         'component/:name': 'component',
+        'component/:name/quick-show': 'componentQuickShow',
         'component/:name/detail': 'componentDetail',
         'query': 'showcase',
         'query/:query': 'query',
@@ -45,6 +48,14 @@ const ShowCaseRouter = router.extend({
                 <Sandbox component={component} />,
             document.querySelector(`.${__ANCHOR_CLASS__}`)
             );
+    },
+    componentQuickShow(name){
+        console.log('Component Quick Show :', name);
+        const component = getComponentFromName(name);
+        return ReactDOM.render(
+            <Layout title={`component ${name}`} links={links} ><QuickShow {...component} /></Layout>,
+            document.querySelector(`.${__ANCHOR_CLASS__}`)
+        );
     },
     query(query){
         dispatcher.handleViewAction({
