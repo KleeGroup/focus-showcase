@@ -3,8 +3,7 @@ $header-height: 80px;
 @import '../../style/colors.scss';
 
 [data-focus='component-detail'] {
-    padding: $detail-padding;
-    padding-top: $header-height + $detail-padding;
+    padding-top: $header-height;
 
     [data-focus='detail-header'] {
         @media (max-width: 1024px) {

@@ -31,6 +31,12 @@
             top: 50px;
             z-index: 999;
             right: 66px;
+            box-shadow: 0 3px 3px rgba(0,0,0,0.18);
+            &:hover {
+                transition: all 0.2s ease-in-out;
+                -webkit-transition: all 0.2s ease-in-out;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.15), 0 6px 6px rgba(0,0,0,0.20);
+            }
         }
     }
 
