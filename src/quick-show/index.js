@@ -47,7 +47,7 @@ class QuickShow extends Component{
                         <div data-focus='title'>
                             <h2>{`${capitalize(name)} - v${version}`}</h2>
                         </div>
-                        <button className='mdl-button mdl-js-button mdl-button--fab mdl-button--accent' onClick={() => { this.isChecked() } } data-focus='demo-button'>
+                        <button className='mdl-button mdl-js-button mdl-button--fab mdl-button--accent mdl-js-ripple-effect' onClick={() => { this.isChecked() } } data-focus='demo-button'>
                             <i className="material-icons">code</i>
                         </button>
                     </div>
