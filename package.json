@@ -100,7 +100,8 @@
         "components/button-back-to-top",
         "components/grid",
         "list/summary",
-        "components/progress-bar"
+        "components/progress-bar",
+        "components/animation"
     ],
     "devDependencies": {
         "assert": "^1.3.0",
