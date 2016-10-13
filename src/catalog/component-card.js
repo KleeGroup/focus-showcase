@@ -5,6 +5,7 @@ const {Component} = React;
 import types from 'focus-core/component/types';
 const liStyle = { flex: 1, minWidth: '300px', maxWidth: '300px', marginTop: '7px', marginRight: '20px', marginBottom: '20px'};
 import {capitalize} from 'lodash/string';
+import Backbone from 'backbone';
 
 /**
 * Component describing a component.
@@ -15,7 +16,7 @@ class ComponentCard extends Component{
     }
 
     _showLiveExample = () => {
-        history.navigate(`component/${this.props.name}/detail`, true);
+        Backbone.history.navigate(`component/${this.props.name}/detail`, true);
     }
 
     /** @inheriteDoc */

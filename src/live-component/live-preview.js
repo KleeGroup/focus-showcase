@@ -3,8 +3,9 @@
 // Dependencies
 import {PropTypes, Component} from 'react';
 import history from 'focus-core/history';
-import capitalize from 'lodash/string/capitalize';
+import capitalize from 'lodash/capitalize';
 import './style/style.scss';
+import Backbone from 'backbone';
 
 const propTypes = {
     code: PropTypes.string,
@@ -15,7 +16,7 @@ const propTypes = {
 
 class LivePreview extends Component {
     componentWillMount() {
-        
+
     }
 
     _renderFullScreen(content) {
@@ -32,7 +33,7 @@ class LivePreview extends Component {
             <div data-focus='showcase-live-preview' data-screen='tiled'>
                 <div className='mdl-shadow--2dp' data-focus='header'>
                     <div data-focus='back'>
-                        <button className='mdl-button mdl-js-button' onClick={()=>{history.navigate(`component/${name}`, true);}}>
+                        <button className='mdl-button mdl-js-button' onClick={()=>{Backbone.history.navigate(`component/${name}`, true);}}>
                             <i className="material-icons">navigate_before</i>
                             <i className="material-icons">extension</i>
                         </button>

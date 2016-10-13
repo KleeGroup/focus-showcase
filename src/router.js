@@ -9,10 +9,11 @@ import getComponentFromName  from './service/get-component-from-name';
 import Detail from './component-detail';
 import tags from './service/get-tags';
 import {dispatcher} from 'focus-core';
+import Backbone from 'backbone';
 
 const links = tags.map(tag => ({url: `#query/${tag}`, content: tag}));
 
-const ShowCaseRouter = router.extend({
+const ShowCaseRouter = router(Backbone).extend({
     routes: {
         '': 'showcase',
         'component/:name': 'component',

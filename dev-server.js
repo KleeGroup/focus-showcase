@@ -1,6 +1,5 @@
 const webpackConfig = require('./webpack.config');
 const serverLauncher = require('webpack-focus').serverLauncher;
-const opener = require('opener');
 serverLauncher(webpackConfig, {
     publicPath: '/',
     hot: true,
@@ -10,4 +9,3 @@ serverLauncher(webpackConfig, {
 });
 const host = process.env.DEV_SERVER_HOST || 'localhost';
 const port = process.env.DEV_SERVER_PORT || 3000;
-opener(`http://${host}:${port}`);

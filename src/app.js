@@ -10,11 +10,12 @@ import './service/create-index';
 import history from 'focus-core/history';
 import {init} from 'focus-core/translation';
 import user from 'focus-core/user';
+import Backbone from 'backbone';
 
 jQuery.getScript('https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.4.4/babel.min.js', () => {
     //Init index
     init({resStore, lng: 'dev'}, () => {
-        history.start();
+        Backbone.history.start();
     });
 });
 
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         const root = location.protocol + '//' + location.host + '/';
         if (href.prop && href.prop.slice(0, root.length) === root) {
             evt.preventDefault();
-            history.navigate(href.attr, true);
+            Backbone.history.navigate(href.attr, true);
         }
     });
 });

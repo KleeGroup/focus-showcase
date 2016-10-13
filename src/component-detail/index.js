@@ -4,10 +4,11 @@ import history from 'focus-core/history';
 import ReactDOM from 'react-dom';
 import hjs from 'highlight.js';
 import './style/style.scss';
-import 'highlight.js/styles/atelier-cave.light.css';
+import 'highlight.js/styles/atelier-cave-light.css';
 import H_js from './highlight-js';
 import types from 'focus-core/component/types';
-import capitalize from 'lodash/string/capitalize';
+import capitalize from 'lodash/capitalize';
+import Backbone from 'backbone';
 
 /**
 * Component describing a component.
@@ -27,7 +28,7 @@ class ComponentDetail extends Component{
             <div data-focus='component-detail'>
                 <div className='mdl-shadow--2dp' data-focus='detail-header'>
                     <div data-focus='back'>
-                        <button className='mdl-button mdl-js-button' onClick={()=>{history.navigate('', true)}}>
+                        <button className='mdl-button mdl-js-button' onClick={()=>{Backbone.history.navigate('', true)}}>
                             <i className="material-icons">navigate_before</i>
                             <i className="material-icons">view_comfy</i>
                         </button>
@@ -56,7 +57,7 @@ class ComponentDetail extends Component{
                     </div>
                 </section>
                 <div data-focus='demo-button'>
-                    <button className='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' onClick={()=>{history.navigate(`component/${name}/detail`, true)}}>
+                    <button className='mdl-button mdl-js-button mdl-button--raised mdl-button--accent' onClick={()=>{Backbone.history.navigate(`component/${name}/detail`, true)}}>
                         Live preview <i className="material-icons">code</i>
                 </button>
             </div>

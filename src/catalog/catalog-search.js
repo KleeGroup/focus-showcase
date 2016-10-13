@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 import types from 'focus-core/component/types';
 import {dispatcher} from 'focus-core';
 import mdlBehaviour from 'focus-components/behaviours/material';
+import Backbone from 'backbone';
+
 const style = {
     input: {
         width: '150px'
@@ -38,9 +40,9 @@ class ComponentSearch extends Component{
         const {criteria: {query}} = storeValue;
         this.setState(storeValue, ()=>{
             if (!query || query === '') {
-                history.navigate(``);
+                Backbone.history.navigate(``);
             } else {
-                history.navigate(`#query/${query}`);
+                Backbone.history.navigate(`#query/${query}`);
             }
         }, () => {
             if (this.refs['search-input']) {
