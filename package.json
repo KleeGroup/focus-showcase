@@ -74,6 +74,7 @@
   },
   "homepage": "https://github.com/KleeGroup/focus-showcase#readme",
   "components": [
+    "common/select-action",
     "common/form",
     "components/input/checkbox",
     "components/input/select-checkbox",
